@@ -1,6 +1,13 @@
 # `@ottoai/zuno-quickbooks`
 
-This package will supply the provider-native QuickBooks Online SDK.
+This package supplies the experimental provider boundary for QuickBooks Online.
 
-The current package exports capability metadata only. Do not use the package for provider requests
-yet.
+The current package exports `quickBooksManifest`. Provider operations are part of Phase 2.
+
+```ts
+import { quickBooksManifest } from '@ottoai/zuno-quickbooks'
+
+console.log(quickBooksManifest.capabilities.reports)
+```
+
+The package does not contain the Ledger compatibility adapter.

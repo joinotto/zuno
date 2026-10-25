@@ -1,6 +1,6 @@
 {
   "name": "@ottoai/zuno-quickbooks",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "Provider-native QuickBooks Online SDK for Zuno.",
   "type": "module",
   "license": "Apache-2.0",
@@ -45,5 +45,8 @@
   "dependencies": {
     "@ottoai/zuno": "workspace:*",
     "@ottoai/zuno-oauth": "workspace:*"
+  },
+  "devDependencies": {
+    "@ottoai/zuno-testing": "workspace:*"
   }
 }

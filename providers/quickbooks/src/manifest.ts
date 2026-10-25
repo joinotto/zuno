@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
-export const quickBooksManifest = {
+import { defineProviderManifest } from '@ottoai/zuno'
+
+export const quickBooksManifest = defineProviderManifest({
   auth: {
     pkce: false,
     rotatesRefreshTokens: true,
@@ -18,6 +20,6 @@ export const quickBooksManifest = {
   environments: ['sandbox', 'production'],
   id: 'quickbooks',
   support: 'experimental',
-} as const
+} as const)
 
 export type QuickBooksManifest = typeof quickBooksManifest

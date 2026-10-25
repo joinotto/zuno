@@ -57,24 +57,30 @@ Create reusable infrastructure without provider business models.
 
 ### Work
 
-1. Create a `pnpm` workspace.
-2. Create `@ottoai/zuno`.
-3. Create `@ottoai/zuno-oauth`.
-4. Create `@ottoai/zuno-testing`.
-5. Add an injected `fetch` transport.
-6. Add request timeouts and cancellation.
-7. Add bounded retry control.
-8. Support the `Retry-After` header.
-9. Add typed errors.
-10. Add request metadata.
-11. Add pagination helpers.
-12. Add lifecycle hooks.
-13. Add token storage contracts.
-14. Add a distributed refresh-lock contract.
-15. Add automatic secret redaction.
-16. Add record-and-replay test tools.
-17. Add continuous integration checks.
-18. Add package integrity and provenance checks.
+Completed work:
+
+1. Created the `pnpm` workspace.
+2. Created `@ottoai/zuno`.
+3. Created `@ottoai/zuno-oauth`.
+4. Created `@ottoai/zuno-testing`.
+5. Added an injected Fetch transport.
+6. Added request timeouts and cancellation.
+7. Added bounded retry control.
+8. Added `Retry-After` support.
+9. Added typed errors.
+10. Added request metadata.
+11. Added pagination helpers.
+12. Added lifecycle hooks.
+13. Added token storage contracts.
+14. Added a distributed refresh-lock contract.
+15. Added automatic secret redaction.
+16. Added record-and-replay test tools.
+17. Added continuous integration checks.
+18. Added package integrity and provenance checks.
+
+Remaining validation:
+
+1. Run the package tests in one non-Node Fetch-compatible runtime.
 
 ### Exit Conditions
 

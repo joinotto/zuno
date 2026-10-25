@@ -58,6 +58,9 @@ importers:
 
   packages/testing:
     dependencies:
+      '@ottoai/zuno':
+        specifier: workspace:*
+        version: link:../core
       '@ottoai/zuno-oauth':
         specifier: workspace:*
         version: link:../oauth
@@ -70,6 +73,10 @@ importers:
       '@ottoai/zuno-oauth':
         specifier: workspace:*
         version: link:../../packages/oauth
+    devDependencies:
+      '@ottoai/zuno-testing':
+        specifier: workspace:*
+        version: link:../../packages/testing
 
 packages:
 

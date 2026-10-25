@@ -16,8 +16,14 @@ package release.
 - Added the initial core, OAuth, testing, and QuickBooks package scaffolds.
 - Added continuous integration and security workflows.
 - Added npm trusted publishing controls.
+- Added coordinated OAuth token refresh with application-owned storage and locking.
+- Added sanitized HTTP recording and deterministic replay tools.
+- Added category-neutral provider manifest conformance checks.
+- Added Phase 1 usage examples and API reference documentation.
+- Added release metadata and tarball validation.
 
 ### Changed
 
 - Marked the Cloudflare Worker as a legacy prototype.
 - Moved unverified provider references outside maintained documentation.
+- Prepared the first four packages as version `0.1.0-alpha.0`.
