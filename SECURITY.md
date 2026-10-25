@@ -9,8 +9,8 @@ release.
 
 Do not open a public issue. Use GitHub private vulnerability reporting.
 
-If private reporting is not available, contact the repository owner privately. Do not include
-credentials or customer data in the first message.
+If private reporting is not available, email `security@joinotto.com`. Do not include credentials or
+customer data in the first message.
 
 Include this information:
 
