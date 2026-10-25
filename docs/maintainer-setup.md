@@ -39,19 +39,25 @@ Do not create a long-lived npm token for CI.
 
 ## GitHub Repository
 
-1. Protect the `main` branch.
-2. Require the `Quality` check.
-3. Require the Node.js runtime checks.
-4. Require the CodeQL check.
-5. Require the dependency review check.
-6. Require one approving review.
-7. Block force pushes after the clean-history update.
-8. Enable private vulnerability reporting.
-9. Enable secret scanning.
-10. Enable push protection.
-11. Create the protected `npm` environment.
-12. Add one required reviewer to the `npm` environment.
-13. Enable OpenSSF Scorecard result publication.
+The repository has these controls:
+
+1. The `main` branch is protected.
+2. The `Quality` check is required.
+3. The Node.js runtime checks are required.
+4. The CodeQL check is required.
+5. The dependency review check is required.
+6. One approving review is required.
+7. Force pushes and branch deletion are blocked.
+8. Private vulnerability reporting is enabled.
+9. Secret scanning is enabled.
+10. Push protection is enabled.
+11. Dependabot security updates are enabled.
+12. The protected `npm` environment exists.
+13. The `npm` environment requires approval from `geekfarmer`.
+
+OpenSSF Scorecard runs on pushes, pull requests, schedule events, and branch protection changes.
+Public Scorecard result publication remains disabled until the project approves external
+publication.
 
 ## Private Contacts
 
