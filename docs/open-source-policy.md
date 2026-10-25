@@ -10,8 +10,6 @@ Do not publish the repository or packages until all blockers are closed.
 
 The current blockers are:
 
-- no approved public license
-- incomplete repository provenance review
 - no confirmed private conduct contact
 - no confirmed private security contact
 - no reserved npm scope

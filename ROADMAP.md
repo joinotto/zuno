@@ -246,9 +246,8 @@ Self-hosted applications must not require hosted Zuno services.
 ## Next Actions
 
 1. Complete the QuickBooks pilot in Ledger.
-2. Complete the license and provenance review.
-3. Select the npm scope.
-4. Approve the architecture.
-5. Create the package workspace.
-6. Create compatibility fixtures.
-7. Publish the first internal prerelease.
+2. Configure the `@zuno` npm organization.
+3. Approve the architecture.
+4. Create the package workspace.
+5. Create compatibility fixtures.
+6. Publish the first internal prerelease.

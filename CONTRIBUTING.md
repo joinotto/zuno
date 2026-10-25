@@ -3,7 +3,7 @@
 ## Current Contribution Status
 
 The project does not accept external code at this time.
-The maintainers must first approve the license and provenance review.
+The maintainers must first configure the public contribution controls.
 
 You can open a discussion about the design.
 Do not submit copied provider code or customer data.
@@ -97,4 +97,4 @@ Submit only work that you have the right to contribute.
 Identify copied or adapted work in the pull request.
 Include all required copyright and license notices.
 
-The project will define the contributor license process before public launch.
+Contributions use the Apache License 2.0 under its contribution terms.

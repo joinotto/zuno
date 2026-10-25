@@ -10,8 +10,8 @@ Zuno does not force different providers into one data model.
 The project is in the design phase.
 Do not use the current code as a stable SDK.
 
-The repository does not have an approved public license.
-Do not publish packages or accept external code until the license review is complete.
+The project uses the Apache License 2.0.
+The clean public history contains project-owned work.
 
 The existing Cloudflare Worker is a legacy prototype.
 The maintainers will replace it with provider packages.
@@ -42,6 +42,7 @@ The maintainers will replace it with provider packages.
 - [Documentation standard](./docs/documentation-standard.md)
 - [Open-source policy](./docs/open-source-policy.md)
 - [License and provenance review](./docs/license-and-provenance.md)
+- [Provenance audit](./docs/provenance-audit-2026-10-25.md)
 - [Unified SDK review](./docs/unified-sdk-review.md)
 - [Contribution guide](./CONTRIBUTING.md)
 - [Governance](./GOVERNANCE.md)
@@ -72,5 +73,5 @@ Do not distribute these files until the provenance review is complete.
 
 ## License
 
-No public license applies at this time.
-See [License and provenance review](./docs/license-and-provenance.md).
+Zuno uses the Apache License 2.0.
+See [LICENSE](./LICENSE) and [NOTICE](./NOTICE).
