@@ -21,7 +21,10 @@ tasks.
 
 ## Trusted Publishing
 
-Create one trusted publisher for each package.
+Publish each package once with an authenticated maintainer account. Use staged publishing when the
+npm organization supports it. Revoke any temporary publication token after the bootstrap release.
+
+Create one trusted publisher for each published package.
 
 Use these values:
 
