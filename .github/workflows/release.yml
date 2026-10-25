@@ -30,6 +30,9 @@ jobs:
       - name: Activate pnpm
         run: corepack prepare pnpm@10.3.0 --activate
 
+      - name: Update npm
+        run: npm install --global npm@12.2.1
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 

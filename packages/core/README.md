@@ -1,4 +1,4 @@
-# `@zuno/core`
+# `@ottoai/zuno`
 
 This package supplies shared runtime primitives for Zuno provider packages.
 

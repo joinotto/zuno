@@ -1,5 +1,5 @@
 {
-  "name": "@zuno/oauth",
+  "name": "@ottoai/zuno-oauth",
   "version": "0.0.0",
   "description": "OAuth primitives for Zuno provider SDKs.",
   "type": "module",
@@ -43,6 +43,6 @@
     "typecheck:test": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false -p tsconfig.test.json"
   },
   "dependencies": {
-    "@zuno/core": "workspace:*"
+    "@ottoai/zuno": "workspace:*"
   }
 }

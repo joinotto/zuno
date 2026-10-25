@@ -111,10 +111,10 @@ QuickBooks package.
 Use this package split:
 
 ```text
-@zuno/quickbooks
+@ottoai/zuno-quickbooks
   Returns QuickBooks-native data.
 
-@zuno/compat-unified
+@ottoai/zuno-compat-unified
   Returns the temporary Unified-compatible data.
 
 Ledger adapter

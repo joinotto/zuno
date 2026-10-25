@@ -8,9 +8,13 @@ export default defineConfig({
   cacheDir: process.env.VITEST_CACHE_DIR ?? 'node_modules/.vitest',
   resolve: {
     alias: {
-      '@zuno/core': fileURLToPath(new URL('./packages/core/src/index.ts', import.meta.url)),
-      '@zuno/oauth': fileURLToPath(new URL('./packages/oauth/src/index.ts', import.meta.url)),
-      '@zuno/testing': fileURLToPath(new URL('./packages/testing/src/index.ts', import.meta.url)),
+      '@ottoai/zuno': fileURLToPath(new URL('./packages/core/src/index.ts', import.meta.url)),
+      '@ottoai/zuno-oauth': fileURLToPath(
+        new URL('./packages/oauth/src/index.ts', import.meta.url),
+      ),
+      '@ottoai/zuno-testing': fileURLToPath(
+        new URL('./packages/testing/src/index.ts', import.meta.url),
+      ),
     },
   },
   test: {

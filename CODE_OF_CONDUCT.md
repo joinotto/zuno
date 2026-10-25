@@ -28,11 +28,9 @@ project events.
 
 ## Reports
 
-Do not report conduct incidents in a public issue. Use the private contact method in the repository
-organization profile.
+Do not report conduct incidents in a public issue. Email `conduct@joinotto.com`.
 
-The project must configure a dedicated private contact before public launch. The maintainers will
-acknowledge a report within five business days.
+The maintainers will acknowledge a report within five business days.
 
 ## Response
 

@@ -30,6 +30,16 @@ architecture changes.
 The project owner manages legal ownership and final governance decisions. The repository
 organization must publish the current project owner.
 
+## Initial Ownership
+
+- Project owner: Otto AI
+- Initial core maintainer: `geekfarmer`
+- Initial npm bootstrap publisher: `toolsotto`
+- Security contact: `security@joinotto.com`
+- Conduct contact: `conduct@joinotto.com`
+
+The project must add a second core maintainer before it marks a provider package as `official`.
+
 ## Decision Process
 
 Use a pull request for routine decisions. Use an architecture decision record for a durable

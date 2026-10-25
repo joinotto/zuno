@@ -16,9 +16,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
-      "@zuno/core": ["./packages/core/src/index.ts"],
-      "@zuno/oauth": ["./packages/oauth/src/index.ts"],
-      "@zuno/testing": ["./packages/testing/src/index.ts"]
+      "@ottoai/zuno": ["./packages/core/src/index.ts"],
+      "@ottoai/zuno-oauth": ["./packages/oauth/src/index.ts"],
+      "@ottoai/zuno-testing": ["./packages/testing/src/index.ts"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

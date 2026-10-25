@@ -76,7 +76,7 @@ legacy/
 
 All public packages use ESM. The first supported Node.js version is `22.18.0`.
 
-### `@zuno/core`
+### `@ottoai/zuno`
 
 This package supplies:
 
@@ -90,7 +90,7 @@ This package supplies:
 - lifecycle hooks
 - redacted logging contracts
 
-### `@zuno/oauth`
+### `@ottoai/zuno-oauth`
 
 This package supplies:
 
@@ -101,7 +101,7 @@ This package supplies:
 - OAuth state validation helpers
 - PKCE helpers
 
-### `@zuno/testing`
+### `@ottoai/zuno-testing`
 
 This package supplies:
 

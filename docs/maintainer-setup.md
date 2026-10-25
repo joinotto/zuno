@@ -6,22 +6,27 @@ Complete these tasks before the first public package release.
 
 ## npm Organization
 
-1. Create or confirm the `zuno` npm organization.
-2. Add the required maintainers.
-3. Require two-factor authentication.
-4. Reserve `@zuno/core`.
-5. Reserve `@zuno/oauth`.
-6. Reserve `@zuno/testing`.
-7. Reserve `@zuno/quickbooks`.
-8. Reserve `@zuno/plaid`.
-9. Reserve `@zuno/compat-unified`.
+1. The `ottoai` npm organization exists.
+2. The authenticated npm account is `toolsotto`.
+3. The `toolsotto` account is an organization owner.
+4. The organization requires two-factor authentication.
+5. Publish each package for the first time at version `0.1.0`.
 
-The current computer is not authenticated to npm. A maintainer must complete the npm organization
-tasks.
+The initial packages are:
+
+- `@ottoai/zuno`
+- `@ottoai/zuno-oauth`
+- `@ottoai/zuno-testing`
+- `@ottoai/zuno-quickbooks`
+- `@ottoai/zuno-plaid`
+- `@ottoai/zuno-compat-unified`
 
 ## Trusted Publishing
 
-Create one trusted publisher for each package.
+Publish each package once with an authenticated maintainer account. Use staged publishing when the
+npm organization supports it. Revoke any temporary publication token after the bootstrap release.
+
+Create one trusted publisher for each published package.
 
 Use these values:
 
@@ -46,21 +51,18 @@ Do not create a long-lived npm token for CI.
 10. Enable push protection.
 11. Create the protected `npm` environment.
 12. Add one required reviewer to the `npm` environment.
+13. Enable OpenSSF Scorecard result publication.
 
 ## Private Contacts
 
-Publish one private security contact. Publish one private conduct contact.
-
-Replace the temporary repository-owner instructions in:
-
-- `SECURITY.md`
-- `CODE_OF_CONDUCT.md`
+- Security contact: `security@joinotto.com`
+- Conduct contact: `conduct@joinotto.com`
 
 ## Package Ownership
 
-Assign one package signing owner. Assign two maintainers to each official provider package.
+The initial core maintainer is `geekfarmer`. The initial npm bootstrap publisher is `toolsotto`.
 
-Record the maintainers in `GOVERNANCE.md`.
+Add a second maintainer before a provider package reaches the `official` support level.
 
 ## First Release
 

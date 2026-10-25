@@ -2,6 +2,7 @@ name: OpenSSF Scorecard
 
 on:
   branch_protection_rule:
+  pull_request:
   schedule:
     - cron: '17 4 * * 2'
   push:
@@ -32,7 +33,7 @@ jobs:
         with:
           results_file: results.sarif
           results_format: sarif
-          publish_results: true
+          publish_results: false
 
       - name: Upload analysis
         uses: github/codeql-action/upload-sarif@b20883b0cd1f46c72ae0ba6d1090936928f9fa30 # v4.32.0
