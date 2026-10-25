@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": ".types",
+    "tsBuildInfoFile": ".types/tsconfig.tsbuildinfo"
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../oauth"
+    }
+  ]
+}
