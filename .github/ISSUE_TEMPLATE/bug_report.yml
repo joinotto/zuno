@@ -1,6 +1,6 @@
 name: Defect report
 description: Report verified incorrect Zuno behavior.
-title: "[Defect]: "
+title: '[Defect]: '
 labels:
   - defect
 body:

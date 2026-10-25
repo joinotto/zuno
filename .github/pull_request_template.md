@@ -1,7 +1,6 @@
 ## Purpose
 
-Describe the problem.
-Describe the result.
+Describe the problem. Describe the result.
 
 ## Change Type
 
@@ -34,8 +33,7 @@ Describe the result.
 
 ## Security
 
-Describe the security effect.
-Write `No security effect` when the change has no security effect.
+Describe the security effect. Write `No security effect` when the change has no security effect.
 
 ## Related Issue
 
