@@ -43,6 +43,7 @@
     "typecheck:test": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false -p tsconfig.test.json"
   },
   "dependencies": {
+    "@ottoai/zuno": "workspace:*",
     "@ottoai/zuno-oauth": "workspace:*"
   }
 }
