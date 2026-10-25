@@ -1,4 +1,4 @@
-# `@zuno/testing`
+# `@ottoai/zuno-testing`
 
 This package supplies deterministic test utilities for Zuno provider packages.
 

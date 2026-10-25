@@ -1,4 +1,4 @@
-# `@zuno/oauth`
+# `@ottoai/zuno-oauth`
 
 This package supplies OAuth 2.0 primitives for Zuno provider packages.
 

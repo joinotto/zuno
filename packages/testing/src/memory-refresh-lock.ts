@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import type { RefreshLock } from '@zuno/oauth'
+import type { RefreshLock } from '@ottoai/zuno-oauth'
 
 export class MemoryRefreshLock implements RefreshLock {
   readonly #queues = new Map<string, Promise<void>>()

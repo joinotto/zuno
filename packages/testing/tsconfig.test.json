@@ -3,8 +3,8 @@
   "compilerOptions": {
     "noEmit": true,
     "paths": {
-      "@zuno/core": ["../../packages/core/src/index.ts"],
-      "@zuno/oauth": ["../../packages/oauth/src/index.ts"]
+      "@ottoai/zuno": ["../../packages/core/src/index.ts"],
+      "@ottoai/zuno-oauth": ["../../packages/oauth/src/index.ts"]
     },
     "types": ["node", "vitest/globals"]
   },

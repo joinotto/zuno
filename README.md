@@ -16,12 +16,12 @@ packages.
 
 ## Initial Packages
 
-- `@zuno/core` supplies transport, errors, retries, hooks, and pagination.
-- `@zuno/oauth` supplies OAuth 2.0 operations and token contracts.
-- `@zuno/quickbooks` supplies the QuickBooks Online client.
-- `@zuno/plaid` supplies the Plaid client.
-- `@zuno/testing` supplies fixtures and provider test tools.
-- `@zuno/compat-unified` supplies a temporary Ledger migration adapter.
+- `@ottoai/zuno` supplies transport, errors, retries, hooks, and pagination.
+- `@ottoai/zuno-oauth` supplies OAuth 2.0 operations and token contracts.
+- `@ottoai/zuno-quickbooks` supplies the QuickBooks Online client.
+- `@ottoai/zuno-plaid` supplies the Plaid client.
+- `@ottoai/zuno-testing` supplies fixtures and provider test tools.
+- `@ottoai/zuno-compat-unified` supplies a temporary Ledger migration adapter.
 
 ## Project Rules
 

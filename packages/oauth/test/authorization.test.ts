@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import { ValidationError } from '@zuno/core'
+import { ValidationError } from '@ottoai/zuno'
 import { describe, expect, it } from 'vitest'
 import { createAuthorizationUrl } from '../src/index.js'
 

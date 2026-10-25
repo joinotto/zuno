@@ -1,5 +1,5 @@
 {
-  "name": "@zuno/quickbooks",
+  "name": "@ottoai/zuno-quickbooks",
   "version": "0.0.0",
   "description": "Provider-native QuickBooks Online SDK for Zuno.",
   "type": "module",
@@ -43,7 +43,7 @@
     "typecheck:test": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false -p tsconfig.test.json"
   },
   "dependencies": {
-    "@zuno/core": "workspace:*",
-    "@zuno/oauth": "workspace:*"
+    "@ottoai/zuno": "workspace:*",
+    "@ottoai/zuno-oauth": "workspace:*"
   }
 }

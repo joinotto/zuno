@@ -6,15 +6,15 @@ Complete these tasks before the first public package release.
 
 ## npm Organization
 
-1. Create or confirm the `zuno` npm organization.
+1. Confirm the `ottoai` npm organization.
 2. Add the required maintainers.
 3. Require two-factor authentication.
-4. Reserve `@zuno/core`.
-5. Reserve `@zuno/oauth`.
-6. Reserve `@zuno/testing`.
-7. Reserve `@zuno/quickbooks`.
-8. Reserve `@zuno/plaid`.
-9. Reserve `@zuno/compat-unified`.
+4. Reserve `@ottoai/zuno`.
+5. Reserve `@ottoai/zuno-oauth`.
+6. Reserve `@ottoai/zuno-testing`.
+7. Reserve `@ottoai/zuno-quickbooks`.
+8. Reserve `@ottoai/zuno-plaid`.
+9. Reserve `@ottoai/zuno-compat-unified`.
 
 The current computer is not authenticated to npm. A maintainer must complete the npm organization
 tasks.

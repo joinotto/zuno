@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import { ValidationError } from '@zuno/core'
+import { ValidationError } from '@ottoai/zuno'
 
 export interface AuthorizationUrlOptions {
   authorizationUrl: string | URL

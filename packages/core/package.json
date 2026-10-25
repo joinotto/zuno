@@ -1,5 +1,5 @@
 {
-  "name": "@zuno/core",
+  "name": "@ottoai/zuno",
   "version": "0.0.0",
   "description": "Transport and runtime primitives for Zuno provider SDKs.",
   "type": "module",

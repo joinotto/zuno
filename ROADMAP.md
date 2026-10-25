@@ -51,9 +51,9 @@ Create reusable infrastructure without provider business models.
 ### Work
 
 1. Create a `pnpm` workspace.
-2. Create `@zuno/core`.
-3. Create `@zuno/oauth`.
-4. Create `@zuno/testing`.
+2. Create `@ottoai/zuno`.
+3. Create `@ottoai/zuno-oauth`.
+4. Create `@ottoai/zuno-testing`.
 5. Add an injected `fetch` transport.
 6. Add request timeouts and cancellation.
 7. Add bounded retry control.
@@ -81,7 +81,7 @@ Create reusable infrastructure without provider business models.
 
 ### Objective
 
-Create `@zuno/quickbooks` from verified Ledger behavior.
+Create `@ottoai/zuno-quickbooks` from verified Ledger behavior.
 
 ### Work
 
@@ -120,7 +120,7 @@ Move Ledger to released Zuno packages.
 
 ### Work
 
-1. Create the temporary `@zuno/compat-unified` package.
+1. Create the temporary `@ottoai/zuno-compat-unified` package.
 2. Publish a prerelease package.
 3. Replace one Ledger workspace import.
 4. Run shadow comparisons.
@@ -186,8 +186,8 @@ Test the core design with a banking provider.
 
 ### Exit Conditions
 
-- Plaid does not add banking types to `@zuno/core`.
-- QuickBooks does not add accounting types to `@zuno/core`.
+- Plaid does not add banking types to `@ottoai/zuno`.
+- QuickBooks does not add accounting types to `@ottoai/zuno`.
 - Both providers use the same transport and test contracts.
 
 ## Phase 6: Support Community Providers
@@ -245,7 +245,7 @@ Zuno services.
 ## Next Actions
 
 1. Complete the QuickBooks pilot in Ledger.
-2. Configure the `@zuno` npm organization.
+2. Configure the `@ottoai` npm organization.
 3. Approve the architecture.
 4. Create the package workspace.
 5. Create compatibility fixtures.

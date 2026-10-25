@@ -3,7 +3,7 @@
   "compilerOptions": {
     "noEmit": true,
     "paths": {
-      "@zuno/core": ["../../packages/core/src/index.ts"]
+      "@ottoai/zuno": ["../../packages/core/src/index.ts"]
     },
     "types": ["node", "vitest/globals"]
   },

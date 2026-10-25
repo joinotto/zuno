@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TokenProvider, TokenSet } from '@zuno/oauth'
+import type { TokenProvider, TokenSet } from '@ottoai/zuno-oauth'
 
 export class MemoryTokenProvider implements TokenProvider {
   #tokens: TokenSet | null
