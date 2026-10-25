@@ -74,8 +74,7 @@ legacy/
 
 ## Core Packages
 
-All public packages use ESM.
-The first supported Node.js version is `22.18.0`.
+All public packages use ESM. The first supported Node.js version is `22.18.0`.
 
 ### `@zuno/core`
 
