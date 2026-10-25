@@ -24,16 +24,23 @@ Create a safe public project foundation.
 
 ### Work
 
-1. Verify the ownership of all repository content.
-2. Verify the license of all copied reference material.
-3. Select the project license.
-4. Confirm the project name and npm scope.
-5. Confirm the GitHub organization.
-6. Approve the governance model.
-7. Configure private security reports.
-8. Add automated documentation checks.
-9. Mark the Worker code as legacy.
-10. Reserve all package names.
+Completed work:
+
+1. Verified the ownership of all repository content.
+2. Verified the license of all copied reference material.
+3. Selected the Apache License 2.0.
+4. Confirmed the Zuno name and the `@ottoai` npm scope.
+5. Confirmed the `joinotto` GitHub organization.
+6. Approved the governance model.
+7. Configured private security reports.
+8. Added automated documentation checks.
+9. Removed the legacy Worker code from the clean history.
+
+Remaining work:
+
+1. Publish the first package versions.
+2. Configure an npm trusted publisher for each package.
+3. Add a second core maintainer before an `official` provider release.
 
 ### Exit Conditions
 

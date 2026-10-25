@@ -98,14 +98,16 @@ store production tokens by default. Zuno does not guarantee unsupported provider
 7. Build Plaid second.
 8. Add storage and messaging providers later.
 
-## Open Questions
+## Release Decisions
 
-The maintainers must resolve these questions before public release:
+The maintainers approved these decisions:
 
-1. What public license will apply?
-2. What npm scope will the project use?
-3. What repository history can the project publish?
-4. Which runtimes will receive official support?
-5. Which provider packages will receive official support?
-6. Which security contact will receive private reports?
-7. Which organization will own package signing keys?
+1. Use the Apache License 2.0.
+2. Use the `@ottoai` npm scope.
+3. Publish only the clean Zuno repository history.
+4. Support Node.js 22.18.0 or later for the first release.
+5. Keep QuickBooks at the `experimental` support level until it meets the release criteria.
+6. Send private security reports to `security@joinotto.com`.
+7. Use the `ottoai` npm organization for package ownership.
+
+The project must add a second core maintainer before it marks a provider as `official`.

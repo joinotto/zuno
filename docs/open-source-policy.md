@@ -4,16 +4,16 @@
 
 This policy defines the minimum controls for public Zuno development.
 
-## Public Release Blockers
+## Package Release Blockers
 
-Do not publish the repository or packages until all blockers are closed.
+Do not publish packages until all blockers are closed.
 
 The current blockers are:
 
-- no confirmed private conduct contact
-- no confirmed private security contact
-- no reserved npm scope
-- no approved package signing owner
+- no approved version `0.1.0` changeset
+- no completed bootstrap publication
+- no configured npm trusted publishers
+- no second core maintainer for an `official` provider
 
 ## Required Repository Files
 
