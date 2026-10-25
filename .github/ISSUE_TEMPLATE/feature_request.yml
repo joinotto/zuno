@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a new Zuno capability.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the user problem.
+    validations:
+      required: true
+  - type: textarea
+    id: provider
+    attributes:
+      label: Provider behavior
+      description: Describe the native provider operation.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Required result
+      description: Describe the required result.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Describe the alternatives that you evaluated.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This request preserves provider-native data.
+          required: true
+        - label: This request does not require a universal business model.
+          required: true

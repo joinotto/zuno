@@ -1,0 +1,51 @@
+name: Defect report
+description: Report verified incorrect Zuno behavior.
+title: "[Defect]: "
+labels:
+  - defect
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials or customer data.
+  - type: input
+    id: package
+    attributes:
+      label: Package
+      description: Give the package name and version.
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime
+      description: Give the runtime name and version.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Describe the expected result.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Describe the actual result.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Give a minimal reproduction with synthetic data.
+    validations:
+      required: true
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Data check
+      options:
+        - label: I removed credentials and customer data.
+          required: true
