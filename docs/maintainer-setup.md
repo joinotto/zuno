@@ -46,6 +46,7 @@ Do not create a long-lived npm token for CI.
 10. Enable push protection.
 11. Create the protected `npm` environment.
 12. Add one required reviewer to the `npm` environment.
+13. Enable OpenSSF Scorecard result publication.
 
 ## Private Contacts
 
