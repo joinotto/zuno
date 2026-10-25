@@ -46,7 +46,7 @@ The repository has these controls:
 3. The Node.js runtime checks are required.
 4. The CodeQL check is required.
 5. The dependency review check is required.
-6. One approving review is required.
+6. Reviewer approval is optional during the initial single-maintainer phase.
 7. Force pushes and branch deletion are blocked.
 8. Private vulnerability reporting is enabled.
 9. Secret scanning is enabled.
