@@ -1,11 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it } from 'vitest'
-import {
-  createRecordingFetch,
-  createReplayFetch,
-  type HttpRecording,
-} from '../src/index.js'
+import { createRecordingFetch, createReplayFetch, type HttpRecording } from '../src/index.js'
 
 describe('HTTP recording', () => {
   it('records JSON exchanges and redacts credentials', async () => {

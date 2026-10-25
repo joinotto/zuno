@@ -68,9 +68,7 @@ export function createReplayFetch(recordings: readonly HttpRecording[]): ReplayF
     const index = queue.findIndex((recording) => requestsMatch(recording.request, recordedRequest))
 
     if (index === -1) {
-      throw new Error(
-        `No HTTP recording matches ${recordedRequest.method} ${recordedRequest.url}.`,
-      )
+      throw new Error(`No HTTP recording matches ${recordedRequest.method} ${recordedRequest.url}.`)
     }
 
     const [recording] = queue.splice(index, 1)

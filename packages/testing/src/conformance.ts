@@ -118,9 +118,7 @@ export async function checkProviderManifest(
   return runConformanceSuite(manifest, providerManifestConformance)
 }
 
-export async function assertProviderManifestConforms(
-  manifest: ProviderManifest,
-): Promise<void> {
+export async function assertProviderManifestConforms(manifest: ProviderManifest): Promise<void> {
   assertConformance(await checkProviderManifest(manifest))
 }
 
@@ -132,6 +130,9 @@ function assert(condition: boolean, message: string): asserts condition {
 
 function assertUniqueNonEmptyValues(values: readonly string[], name: string): void {
   assert(values.length > 0, `The provider must declare at least one ${name}.`)
-  assert(values.every((value) => value.trim() !== ''), `A provider ${name} must not be empty.`)
+  assert(
+    values.every((value) => value.trim() !== ''),
+    `A provider ${name} must not be empty.`,
+  )
   assert(new Set(values).size === values.length, `Provider ${name} values must be unique.`)
 }

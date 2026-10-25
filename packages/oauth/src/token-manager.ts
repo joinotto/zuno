@@ -118,7 +118,11 @@ export function createTokenManager(options: TokenManagerOptions): TokenManager {
   return new TokenManager(options)
 }
 
-export function isExpiring(tokens: TokenSet, now: Date, expirySkewMs = defaultExpirySkewMs): boolean {
+export function isExpiring(
+  tokens: TokenSet,
+  now: Date,
+  expirySkewMs = defaultExpirySkewMs,
+): boolean {
   if (tokens.accessTokenExpiresAt === undefined) {
     return false
   }
@@ -131,8 +135,7 @@ function mergeTokenSets(current: TokenSet, refreshed: TokenSet): TokenSet {
     accessToken: refreshed.accessToken,
     accessTokenExpiresAt: refreshed.accessTokenExpiresAt,
     refreshToken: refreshed.refreshToken ?? current.refreshToken,
-    refreshTokenExpiresAt:
-      refreshed.refreshTokenExpiresAt ?? current.refreshTokenExpiresAt,
+    refreshTokenExpiresAt: refreshed.refreshTokenExpiresAt ?? current.refreshTokenExpiresAt,
     scopes: refreshed.scopes ?? current.scopes,
   }
 }

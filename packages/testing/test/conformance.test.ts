@@ -47,14 +47,14 @@ describe('provider manifest conformance', () => {
     })
 
     expect(result.passed).toBe(false)
-    expect(result.results.filter((caseResult) => !caseResult.passed).map(({ name }) => name)).toEqual(
-      [
-        'provider id',
-        'provider environments',
-        'provider capabilities',
-        'provider authentication',
-      ],
-    )
+    expect(
+      result.results.filter((caseResult) => !caseResult.passed).map(({ name }) => name),
+    ).toEqual([
+      'provider id',
+      'provider environments',
+      'provider capabilities',
+      'provider authentication',
+    ])
     expect(() => assertConformance(result)).toThrow(ConformanceError)
   })
 })
