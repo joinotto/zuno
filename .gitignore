@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.types/
+coverage/
+*.tsbuildinfo
+*.tgz
+packages/*/LICENSE
+packages/*/NOTICE
+providers/*/LICENSE
+providers/*/NOTICE
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+.pnpm-store/
