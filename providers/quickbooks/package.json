@@ -1,0 +1,49 @@
+{
+  "name": "@zuno/quickbooks",
+  "version": "0.0.0",
+  "description": "Provider-native QuickBooks Online SDK for Zuno.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joinotto/zuno.git",
+    "directory": "providers/quickbooks"
+  },
+  "homepage": "https://github.com/joinotto/zuno#readme",
+  "bugs": {
+    "url": "https://github.com/joinotto/zuno/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --sourcemap --clean",
+    "package:check": "publint && attw --pack . --profile esm-only",
+    "prepack": "pnpm build && node ../../scripts/prepare-package.mjs",
+    "typecheck:test": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@zuno/core": "workspace:*",
+    "@zuno/oauth": "workspace:*"
+  }
+}

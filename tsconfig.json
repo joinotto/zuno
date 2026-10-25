@@ -9,6 +9,9 @@
     },
     {
       "path": "./packages/testing"
+    },
+    {
+      "path": "./providers/quickbooks"
     }
   ]
 }
