@@ -47,13 +47,14 @@ The repository has these controls:
 4. The CodeQL check is required.
 5. The dependency review check is required.
 6. Reviewer approval is optional during the initial single-maintainer phase.
-7. Force pushes and branch deletion are blocked.
-8. Private vulnerability reporting is enabled.
-9. Secret scanning is enabled.
-10. Push protection is enabled.
-11. Dependabot security updates are enabled.
-12. The protected `npm` environment exists.
-13. The `npm` environment requires approval from `geekfarmer`.
+7. Only `geekfarmer` can merge or update the protected `main` branch.
+8. Force pushes and branch deletion are blocked.
+9. Private vulnerability reporting is enabled.
+10. Secret scanning is enabled.
+11. Push protection is enabled.
+12. Dependabot security updates are enabled.
+13. The protected `npm` environment exists.
+14. The `npm` environment requires approval from `geekfarmer`.
 
 OpenSSF Scorecard runs on pushes, pull requests, schedule events, and branch protection changes.
 Public Scorecard result publication remains disabled until the project approves external
