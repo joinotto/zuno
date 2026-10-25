@@ -1,6 +1,6 @@
 {
   "name": "@ottoai/zuno-testing",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "Test utilities for Zuno provider SDKs.",
   "type": "module",
   "license": "Apache-2.0",
