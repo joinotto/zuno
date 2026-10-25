@@ -92,12 +92,10 @@ Each provider manifest must state one support level.
 
 ## Release Rules
 
-Use Semantic Versioning for public packages.
-Use Changesets for release notes and version changes.
+Use Semantic Versioning for public packages. Use Changesets for release notes and version changes.
 Maintain an `Unreleased` section in `CHANGELOG.md`.
 
-Do not release from a local developer computer.
-Release only from the protected release workflow.
+Do not release from a local developer computer. Release only from the protected release workflow.
 
 ## References
 

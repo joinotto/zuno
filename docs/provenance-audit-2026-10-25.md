@@ -6,33 +6,30 @@
 
 ## Result
 
-The previous repository history did not contain a license file.
-The previous history contained work from an external author.
-The project could not verify redistribution rights for that work.
+The previous repository history did not contain a license file. The previous history contained work
+from an external author. The project could not verify redistribution rights for that work.
 
-The project removed the previous history from the public `main` branch.
-The project did not copy the prototype source into the clean branch.
+The project removed the previous history from the public `main` branch. The project did not copy the
+prototype source into the clean branch.
 
 ## Local Backup
 
-A local branch keeps the previous history.
-The branch name is `local/prototype-history-2026-10-25`.
+A local branch keeps the previous history. The branch name is `local/prototype-history-2026-10-25`.
 
-Do not push this branch to a public remote.
-Delete the branch after the legal review or required evidence capture.
+Do not push this branch to a public remote. Delete the branch after the legal review or required
+evidence capture.
 
 ## Approved Content
 
-The clean branch contains project planning and governance documents.
-The Zuno project created these documents.
+The clean branch contains project planning and governance documents. The Zuno project created these
+documents.
 
-New source files must use the Apache License 2.0.
-New package metadata must use the `Apache-2.0` SPDX identifier.
+New source files must use the Apache License 2.0. New package metadata must use the `Apache-2.0`
+SPDX identifier.
 
 ## Legacy Worker
 
-The project did not move the old Worker source.
-The previous source has no verified license.
+The project did not move the old Worker source. The previous source has no verified license.
 
-The `legacy/worker` directory contains only a provenance notice.
-Reimplement required behavior from authorized sources.
+The `legacy/worker` directory contains only a provenance notice. Reimplement required behavior from
+authorized sources.

@@ -1,7 +1,7 @@
 # Changelog
 
-This file records notable project changes.
-The project uses Semantic Versioning after the first package release.
+This file records notable project changes. The project uses Semantic Versioning after the first
+package release.
 
 ## Unreleased
 
@@ -13,6 +13,9 @@ The project uses Semantic Versioning after the first package release.
 - Added the documentation standard.
 - Added open-source governance documents.
 - Added the license and provenance review process.
+- Added the initial core, OAuth, testing, and QuickBooks package scaffolds.
+- Added continuous integration and security workflows.
+- Added npm trusted publishing controls.
 
 ### Changed
 

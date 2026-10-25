@@ -2,8 +2,8 @@
 
 ## Purpose
 
-This document defines the package boundaries for Zuno.
-It also defines the ownership of application data.
+This document defines the package boundaries for Zuno. It also defines the ownership of application
+data.
 
 ## Design Rules
 
@@ -43,8 +43,7 @@ Core packages
   └─ hooks and test tools
 ```
 
-Dependencies point from the application to the core.
-Core packages do not import provider packages.
+Dependencies point from the application to the core. Core packages do not import provider packages.
 Provider packages do not import application adapters.
 
 ## Repository Layout
@@ -74,6 +73,9 @@ legacy/
 ```
 
 ## Core Packages
+
+All public packages use ESM.
+The first supported Node.js version is `22.18.0`.
 
 ### `@zuno/core`
 
@@ -132,13 +134,11 @@ export interface TokenProvider {
 }
 ```
 
-Provider packages accept a `TokenProvider`.
-Provider packages do not select an encryption method.
+Provider packages accept a `TokenProvider`. Provider packages do not select an encryption method.
 
 ## Refresh Lock Contract
 
-Some providers rotate refresh tokens.
-Concurrent refresh operations can invalidate a new token.
+Some providers rotate refresh tokens. Concurrent refresh operations can invalidate a new token.
 
 ```ts
 export interface RefreshLock {
@@ -146,8 +146,8 @@ export interface RefreshLock {
 }
 ```
 
-Horizontally scaled applications must use a distributed lock.
-The memory store is only for local development and tests.
+Horizontally scaled applications must use a distributed lock. The memory store is only for local
+development and tests.
 
 ## Request Metadata
 
@@ -166,8 +166,8 @@ export interface RequestMetadata {
 }
 ```
 
-Simple operations return provider data directly.
-An optional response mode returns data and metadata.
+Simple operations return provider data directly. An optional response mode returns data and
+metadata.
 
 ```ts
 const account = await quickbooks.accounts.get(accountId)
@@ -215,25 +215,20 @@ export const manifest = {
   },
   capabilities: {
     accounts: ['list', 'get'],
-    reports: [
-      'profitAndLoss',
-      'balanceSheet',
-      'cashFlow',
-      'trialBalance',
-    ],
+    reports: ['profitAndLoss', 'balanceSheet', 'cashFlow', 'trialBalance'],
     transactions: ['list', 'get', 'deleted'],
     webhooks: ['verify', 'parse'],
   },
 } as const
 ```
 
-The manifest supports documentation and discovery.
-The manifest does not define a shared business model.
+The manifest supports documentation and discovery. The manifest does not define a shared business
+model.
 
 ## Persistence
 
-Provider packages accept persistence interfaces.
-Provider packages do not import persistence implementations.
+Provider packages accept persistence interfaces. Provider packages do not import persistence
+implementations.
 
 The application owns this data:
 
@@ -261,9 +256,8 @@ The public error hierarchy contains these errors:
 - `TimeoutError`
 - `ConnectionError`
 
-Each error includes the provider and operation.
-An API error includes the status and provider request identifier.
-An error body must be redacted before exposure.
+Each error includes the provider and operation. An API error includes the status and provider
+request identifier. An error body must be redacted before exposure.
 
 ## Observability
 
@@ -279,8 +273,7 @@ Core packages emit lifecycle events.
 - `rate-limit`
 - `webhook:received`
 
-Zuno does not select a logging vendor.
-An optional OpenTelemetry package can consume these events.
+Zuno does not select a logging vendor. An optional OpenTelemetry package can consume these events.
 
 ## Testing
 
@@ -314,14 +307,12 @@ Test these payload conditions:
 
 ### Sandbox Tests
 
-Use provider sandbox accounts.
-Use synthetic data only.
-Delete records that a test creates.
+Use provider sandbox accounts. Use synthetic data only. Delete records that a test creates.
 
 ### Consumer Tests
 
-Ledger owns its application compatibility tests.
-The tests compare the workspace code with the released package.
+Ledger owns its application compatibility tests. The tests compare the workspace code with the
+released package.
 
 ## Legacy Prototype
 
@@ -335,5 +326,5 @@ It combines:
 - normalized accounting schemas
 - provider clients
 
-Do not use these abstractions as the new SDK core.
-Move useful code only after the provenance and compatibility reviews.
+Do not use these abstractions as the new SDK core. Move useful code only after the provenance and
+compatibility reviews.

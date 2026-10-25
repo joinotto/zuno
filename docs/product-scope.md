@@ -2,41 +2,38 @@
 
 ## Purpose
 
-Zuno reduces repeated integration work.
-Zuno supplies provider clients and integration infrastructure.
+Zuno reduces repeated integration work. Zuno supplies provider clients and integration
+infrastructure.
 
 ## Product Principle
 
 Each provider keeps its native data model.
 
-QuickBooks data remains QuickBooks data.
-Plaid data remains Plaid data.
-Slack data remains Slack data.
+QuickBooks data remains QuickBooks data. Plaid data remains Plaid data. Slack data remains Slack
+data.
 
-Applications can map provider data into their own models.
-Optional adapters can supply a specific compatibility model.
+Applications can map provider data into their own models. Optional adapters can supply a specific
+compatibility model.
 
 ## Users
 
 ### Application Teams
 
-Application teams need one reliable provider SDK.
-They do not want to build OAuth, retries, and webhooks.
+Application teams need one reliable provider SDK. They do not want to build OAuth, retries, and
+webhooks.
 
 ### Multi-Provider Products
 
-These products install multiple Zuno provider packages.
-They own the application data model.
+These products install multiple Zuno provider packages. They own the application data model.
 
 ### Provider Maintainers
 
-Provider maintainers add or maintain one provider package.
-They use the Zuno test and release process.
+Provider maintainers add or maintain one provider package. They use the Zuno test and release
+process.
 
 ### Ledger
 
-Ledger uses the QuickBooks and Plaid packages.
-Ledger keeps its database and synchronization logic.
+Ledger uses the QuickBooks and Plaid packages. Ledger keeps its database and synchronization logic.
 
 ## Supported Use Cases
 
@@ -86,12 +83,9 @@ Ledger keeps its database and synchronization logic.
 
 ## Excluded Use Cases
 
-Zuno does not supply one universal business data model.
-Zuno does not own application tenants.
-Zuno does not own application authorization.
-Zuno does not require a Zuno-hosted service.
-Zuno does not store production tokens by default.
-Zuno does not guarantee unsupported provider behavior.
+Zuno does not supply one universal business data model. Zuno does not own application tenants. Zuno
+does not own application authorization. Zuno does not require a Zuno-hosted service. Zuno does not
+store production tokens by default. Zuno does not guarantee unsupported provider behavior.
 
 ## Product Decisions
 

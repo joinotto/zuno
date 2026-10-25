@@ -2,19 +2,17 @@
 
 Zuno is a planned open-source TypeScript SDK for external integrations.
 
-Each provider package keeps the native provider model.
-Zuno does not force different providers into one data model.
+Each provider package keeps the native provider model. Zuno does not force different providers into
+one data model.
 
 ## Project Status
 
-The project is in the design phase.
-Do not use the current code as a stable SDK.
+The project is in the design phase. Do not use the current code as a stable SDK.
 
-The project uses the Apache License 2.0.
-The clean public history contains project-owned work.
+The project uses the Apache License 2.0. The clean public history contains project-owned work.
 
-The existing Cloudflare Worker is a legacy prototype.
-The maintainers will replace it with provider packages.
+The existing Cloudflare Worker is a legacy prototype. The maintainers will replace it with provider
+packages.
 
 ## Initial Packages
 
@@ -48,30 +46,27 @@ The maintainers will replace it with provider packages.
 - [Governance](./GOVERNANCE.md)
 - [Security policy](./SECURITY.md)
 - [Support policy](./SUPPORT.md)
+- [Maintainer setup](./docs/maintainer-setup.md)
 
 ## First Delivery
 
-The first delivery extracts the QuickBooks code that Ledger uses.
-Compatibility tests will compare the package with the current Ledger behavior.
+The first delivery extracts the QuickBooks code that Ledger uses. Compatibility tests will compare
+the package with the current Ledger behavior.
 
-Plaid is the second provider.
-Plaid will test the category-neutral core design.
+Plaid is the second provider. Plaid will test the category-neutral core design.
 
 ## Documentation Language
 
-Public documentation follows the project writing rules.
-The rules use ASD-STE100 Issue 9 principles.
+Public documentation follows the project writing rules. The rules use ASD-STE100 Issue 9 principles.
 
-The project does not claim certified ASD-STE100 conformance.
-Certified conformance requires the official specification and a qualified review.
+The project does not claim certified ASD-STE100 conformance. Certified conformance requires the
+official specification and a qualified review.
 
 ## Legacy Material
 
-The `legacy` directory contains files from the first prototype.
-These files are not current product documentation.
-Do not distribute these files until the provenance review is complete.
+The `legacy` directory contains files from the first prototype. These files are not current product
+documentation. Do not distribute these files until the provenance review is complete.
 
 ## License
 
-Zuno uses the Apache License 2.0.
-See [LICENSE](./LICENSE) and [NOTICE](./NOTICE).
+Zuno uses the Apache License 2.0. See [LICENSE](./LICENSE) and [NOTICE](./NOTICE).

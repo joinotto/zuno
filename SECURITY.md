@@ -2,16 +2,15 @@
 
 ## Supported Versions
 
-Zuno has no supported public release.
-The maintainers will publish the support table with the first release.
+Zuno has no supported public release. The maintainers will publish the support table with the first
+release.
 
 ## Report a Vulnerability
 
-Do not open a public issue.
-Use GitHub private vulnerability reporting.
+Do not open a public issue. Use GitHub private vulnerability reporting.
 
-If private reporting is not available, contact the repository owner privately.
-Do not include credentials or customer data in the first message.
+If private reporting is not available, contact the repository owner privately. Do not include
+credentials or customer data in the first message.
 
 Include this information:
 
@@ -22,8 +21,7 @@ Include this information:
 - proof-of-concept data
 - suggested correction
 
-Use synthetic data when possible.
-Encrypt sensitive supporting files.
+Use synthetic data when possible. Encrypt sensitive supporting files.
 
 ## Response Targets
 
@@ -38,8 +36,8 @@ These targets can change for a complex report.
 
 ## Disclosure
 
-Do not publish the vulnerability before a coordinated release.
-The maintainers will credit the reporter when the reporter requests credit.
+Do not publish the vulnerability before a coordinated release. The maintainers will credit the
+reporter when the reporter requests credit.
 
 ## Security Scope
 
@@ -67,7 +65,5 @@ Do not submit:
 
 ## Secret Exposure
 
-Revoke an exposed credential immediately.
-Do not wait for the incident review.
-Remove the credential from logs and build artifacts.
-Record the incident and the corrective action.
+Revoke an exposed credential immediately. Do not wait for the incident review. Remove the credential
+from logs and build artifacts. Record the incident and the corrective action.

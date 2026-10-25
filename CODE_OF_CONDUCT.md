@@ -2,8 +2,8 @@
 
 ## Purpose
 
-This code protects a respectful and safe project community.
-It applies to all project spaces and project events.
+This code protects a respectful and safe project community. It applies to all project spaces and
+project events.
 
 ## Expected Conduct
 
@@ -28,11 +28,11 @@ It applies to all project spaces and project events.
 
 ## Reports
 
-Do not report conduct incidents in a public issue.
-Use the private contact method in the repository organization profile.
+Do not report conduct incidents in a public issue. Use the private contact method in the repository
+organization profile.
 
-The project must configure a dedicated private contact before public launch.
-The maintainers will acknowledge a report within five business days.
+The project must configure a dedicated private contact before public launch. The maintainers will
+acknowledge a report within five business days.
 
 ## Response
 
@@ -58,11 +58,10 @@ The action depends on severity, impact, and prior conduct.
 
 ## Appeals
 
-A person can request one appeal.
-An uninvolved maintainer must review the appeal.
-The appeal decision is final.
+A person can request one appeal. An uninvolved maintainer must review the appeal. The appeal
+decision is final.
 
 ## Maintainer Conflict
 
-An accused maintainer must not review the report.
-Another maintainer or an external reviewer must manage the case.
+An accused maintainer must not review the report. Another maintainer or an external reviewer must
+manage the case.

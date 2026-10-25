@@ -2,16 +2,16 @@
 
 ## Purpose
 
-This standard controls public Zuno documentation.
-It applies to prose in Markdown, examples, issues, and release notes.
+This standard controls public Zuno documentation. It applies to prose in Markdown, examples, issues,
+and release notes.
 
 ## Standard Basis
 
-Use ASD-STE100 Issue 9 principles for technical text.
-Use the official ASD-STE100 specification during formal reviews.
+Use ASD-STE100 Issue 9 principles for technical text. Use the official ASD-STE100 specification
+during formal reviews.
 
-This file does not replace the official specification.
-The project does not claim certified conformance.
+This file does not replace the official specification. The project does not claim certified
+conformance.
 
 ## Writing Rules
 
@@ -43,8 +43,7 @@ The project does not claim certified conformance.
 - Split a sentence when it contains more than one action.
 - Keep one subject in each paragraph when possible.
 
-These limits are project controls.
-They support the ASD-STE100 writing target.
+These limits are project controls. They support the ASD-STE100 writing target.
 
 ## Requirement Words
 
@@ -56,8 +55,7 @@ Use these words only with the specified meaning:
 - `may` states permission.
 - `can` states an ability.
 
-Do not use `should` for a requirement.
-Do not use `may` when you mean ability.
+Do not use `should` for a requirement. Do not use `may` when you mean ability.
 
 ## Terms
 
@@ -71,8 +69,8 @@ Use these project terms:
 - Use `adapter` for an explicit data conversion package.
 - Use `legacy prototype` for the first Worker implementation.
 
-Do not use `integration` when `provider package` is more precise.
-Do not use `unified model` for provider-native data.
+Do not use `integration` when `provider package` is more precise. Do not use `unified model` for
+provider-native data.
 
 ## Code Examples
 
@@ -97,8 +95,7 @@ Use this order when the sections apply:
 7. Security notes
 8. References
 
-Use sentence-style headings.
-Do not use decorative emoji in technical headings.
+Use sentence-style headings. Do not use decorative emoji in technical headings.
 
 ## Review Process
 
@@ -114,11 +111,11 @@ Every public document requires these reviews:
 
 ## Exceptions
 
-Code, API names, trademarks, and quoted text can use non-approved words.
-Mark quoted text and keep the quote short.
+Code, API names, trademarks, and quoted text can use non-approved words. Mark quoted text and keep
+the quote short.
 
-Machine-readable specifications do not use this prose standard.
-Their descriptions must still use clear controlled language.
+Machine-readable specifications do not use this prose standard. Their descriptions must still use
+clear controlled language.
 
 ## References
 

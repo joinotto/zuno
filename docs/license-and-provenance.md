@@ -2,11 +2,9 @@
 
 ## Current Status
 
-The project uses the Apache License 2.0.
-The public `main` branch contains a clean project history.
+The project uses the Apache License 2.0. The public `main` branch contains a clean project history.
 
-The npm scope setup is not complete.
-Do not publish packages before the release controls are active.
+The npm scope setup is not complete. Do not publish packages before the release controls are active.
 
 ## Review Scope
 
@@ -40,21 +38,21 @@ Each record must include:
 
 ## Legacy References
 
-The clean branch does not contain unverified prototype source.
-See the dated provenance audit for the removal record.
+The clean branch does not contain unverified prototype source. See the dated provenance audit for
+the removal record.
 
 ## Approved License
 
-The approved project license is Apache License 2.0.
-Package metadata must use the `Apache-2.0` SPDX identifier.
+The approved project license is Apache License 2.0. Package metadata must use the `Apache-2.0` SPDX
+identifier.
 
 ## Source File Notices
 
-Apply SPDX identifiers to package metadata and new source files.
-Use the REUSE specification for license metadata.
+Apply SPDX identifiers to package metadata and new source files. Use the REUSE specification for
+license metadata.
 
-Do not add a notice to third-party code without checking its license.
-Keep required third-party notices in the distribution.
+Do not add a notice to third-party code without checking its license. Keep required third-party
+notices in the distribution.
 
 ## Publication Approval
 

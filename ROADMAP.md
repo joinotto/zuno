@@ -2,8 +2,7 @@
 
 ## Purpose
 
-This roadmap defines the work for the first stable Zuno release.
-It does not define release dates.
+This roadmap defines the work for the first stable Zuno release. It does not define release dates.
 
 ## Release Conditions
 
@@ -233,8 +232,8 @@ Offer optional infrastructure without changing the package-first design.
 - Durable synchronization workers
 - Connection health dashboard
 
-Hosted services must use the public Zuno packages.
-Self-hosted applications must not require hosted Zuno services.
+Hosted services must use the public Zuno packages. Self-hosted applications must not require hosted
+Zuno services.
 
 ## Version Plan
 

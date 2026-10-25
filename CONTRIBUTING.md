@@ -2,11 +2,10 @@
 
 ## Current Contribution Status
 
-The project does not accept external code at this time.
-The maintainers must first configure the public contribution controls.
+The project does not accept external code at this time. The maintainers must first configure the
+public contribution controls.
 
-You can open a discussion about the design.
-Do not submit copied provider code or customer data.
+You can open a discussion about the design. Do not submit copied provider code or customer data.
 
 ## Before You Start
 
@@ -19,11 +18,10 @@ Do not submit copied provider code or customer data.
 
 ## Development Requirements
 
-Use the runtime versions that the repository configuration specifies.
-Use `pnpm` after the workspace migration is complete.
+Use the runtime versions that the repository configuration specifies. Use `pnpm` after the workspace
+migration is complete.
 
-Do not add a dependency without a license review.
-Do not commit credentials or production data.
+Do not add a dependency without a license review. Do not commit credentials or production data.
 
 ## Change Process
 
@@ -50,29 +48,26 @@ A provider change must include:
 - error behavior
 - security considerations
 
-Do not add an operation only to match another provider.
-Add an operation when the provider supports the operation.
+Do not add an operation only to match another provider. Add an operation when the provider supports
+the operation.
 
 ## Fixture Rules
 
-Use synthetic provider accounts when possible.
-Remove names, emails, addresses, tokens, and account numbers.
-Replace identifiers with stable fake identifiers.
+Use synthetic provider accounts when possible. Remove names, emails, addresses, tokens, and account
+numbers. Replace identifiers with stable fake identifiers.
 
-Do not change a value when the value controls test behavior.
-Record the reason for each retained sensitive field.
+Do not change a value when the value controls test behavior. Record the reason for each retained
+sensitive field.
 
 ## Documentation Rules
 
-Follow [Documentation Standard](./docs/documentation-standard.md).
-Use the same term for the same item.
-Verify all commands before review.
+Follow [Documentation Standard](./docs/documentation-standard.md). Use the same term for the same
+item. Verify all commands before review.
 
 ## Commit Rules
 
-Use a short imperative subject.
-Keep unrelated changes in separate commits.
-Do not rewrite another contributor's commit without permission.
+Use a short imperative subject. Keep unrelated changes in separate commits. Do not rewrite another
+contributor's commit without permission.
 
 ## Pull Request Review
 
@@ -88,13 +83,12 @@ The reviewer checks:
 - dependency licenses
 - provenance
 
-Two approvals are required for a security-sensitive change.
-One approval is required for other changes.
+Two approvals are required for a security-sensitive change. One approval is required for other
+changes.
 
 ## Contributor Rights
 
-Submit only work that you have the right to contribute.
-Identify copied or adapted work in the pull request.
-Include all required copyright and license notices.
+Submit only work that you have the right to contribute. Identify copied or adapted work in the pull
+request. Include all required copyright and license notices.
 
 Contributions use the Apache License 2.0 under its contribution terms.
