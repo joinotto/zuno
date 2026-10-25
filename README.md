@@ -1,18 +1,18 @@
 # Zuno
 
-Zuno is a planned open-source TypeScript SDK for external integrations.
+Zuno is an open-source TypeScript SDK for external integrations.
 
 Each provider package keeps the native provider model. Zuno does not force different providers into
 one data model.
 
 ## Project Status
 
-The project is in the design phase. Do not use the current code as a stable SDK.
+The project is in active development. The current packages are experimental.
 
 The project uses the Apache License 2.0. The clean public history contains project-owned work.
 
-The existing Cloudflare Worker is a legacy prototype. The maintainers will replace it with provider
-packages.
+The shared transport, OAuth, and testing packages are implemented. The QuickBooks package currently
+contains its provider boundary and capability manifest.
 
 ## Initial Packages
 
@@ -37,6 +37,8 @@ packages.
 - [Roadmap](./ROADMAP.md)
 - [Product scope](./docs/product-scope.md)
 - [Architecture](./docs/architecture.md)
+- [Getting started](./docs/getting-started.md)
+- [API reference](./docs/api-reference.md)
 - [Documentation standard](./docs/documentation-standard.md)
 - [Open-source policy](./docs/open-source-policy.md)
 - [License and provenance review](./docs/license-and-provenance.md)
@@ -61,11 +63,6 @@ Public documentation follows the project writing rules. The rules use ASD-STE100
 
 The project does not claim certified ASD-STE100 conformance. Certified conformance requires the
 official specification and a qualified review.
-
-## Legacy Material
-
-The `legacy` directory contains files from the first prototype. These files are not current product
-documentation. Do not distribute these files until the provenance review is complete.
 
 ## License
 
