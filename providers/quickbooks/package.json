@@ -12,6 +12,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./compatibility": {
+      "types": "./dist/compatibility/index.d.ts",
+      "import": "./dist/compatibility/index.js"
     }
   },
   "files": [
@@ -36,7 +40,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --sourcemap --clean",
+    "build": "tsup src/index.ts src/compatibility/index.ts --format esm --dts --sourcemap --clean",
     "package:check": "publint && attw --pack . --profile esm-only",
     "prepack": "pnpm build && node ../../scripts/prepare-package.mjs",
     "typecheck:test": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false -p tsconfig.test.json"

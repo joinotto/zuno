@@ -87,7 +87,7 @@ export class QuickBooksOAuth {
 
     if (!response.ok) {
       throw new AuthenticationError(
-        String(payload.error_description ?? payload.error ?? 'QuickBooks OAuth request failed.'),
+        stringValue(payload.error_description ?? payload.error, 'QuickBooks OAuth request failed.'),
         {
           body: payload,
           operation,
@@ -146,8 +146,10 @@ async function parseBody(response: Response): Promise<QuickBooksRecord> {
   }
 }
 
-function stringValue(value: unknown): string {
-  return value === undefined || value === null ? '' : String(value)
+function stringValue(value: unknown, fallback = ''): string {
+  return typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'
+    ? String(value)
+    : fallback
 }
 
 function numberValue(value: unknown): number | undefined {

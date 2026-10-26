@@ -47,16 +47,14 @@ export class QuickBooksClient {
     const name = optionalString(company.CompanyName)
 
     return {
-      id: String(company.Id ?? this.realmId),
+      id: optionalString(company.Id) ?? this.realmId,
       raw: company,
       ...(name === undefined ? {} : { name }),
     }
   }
 
   async request<T>(path: string, init: RequestInit = {}, operation = 'request'): Promise<T> {
-    let forceRefresh = false
-
-    while (true) {
+    for (const forceRefresh of [false, true]) {
       const accessToken = await this.#getAccessToken(forceRefresh)
       const transport = this.#createTransport(accessToken)
 
@@ -68,13 +66,18 @@ export class QuickBooksClient {
         })
       } catch (error) {
         if (error instanceof AuthenticationError && !forceRefresh) {
-          forceRefresh = true
           continue
         }
 
         throw error
       }
     }
+
+    throw new AuthenticationError('QuickBooks authentication failed.', {
+      operation,
+      provider: 'quickbooks',
+      status: 401,
+    })
   }
 
   companyPath(path: string): string {
@@ -113,5 +116,7 @@ function firstRecord(value: unknown): QuickBooksRecord | undefined {
 }
 
 function optionalString(value: unknown): string | undefined {
-  return value === undefined || value === null ? undefined : String(value)
+  return typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'
+    ? String(value)
+    : undefined
 }
