@@ -36,7 +36,7 @@ jobs:
           PNPM_HOME: ${{ runner.temp }}/pnpm-bin
         run: |
           echo "${PNPM_HOME}" >> "${GITHUB_PATH}"
-          PATH="${PNPM_HOME}:${PATH}" pnpm add --global npm@11.21.0 \
+          PATH="${PNPM_HOME}:${PATH}" pnpm add --global npm@12.2.1 \
             --global-dir "${RUNNER_TEMP}/pnpm-global" \
             --global-bin-dir "${PNPM_HOME}"
 
