@@ -14,13 +14,24 @@ The project uses the Apache License 2.0. The clean public history contains proje
 The shared transport, OAuth, and testing packages are implemented. The QuickBooks package currently
 contains its provider boundary and capability manifest.
 
-## Initial Packages
+## Available Packages
 
 - `@ottoai/zuno` supplies transport, errors, retries, hooks, and pagination.
 - `@ottoai/zuno-oauth` supplies OAuth 2.0 operations and token contracts.
 - `@ottoai/zuno-quickbooks` supplies the QuickBooks Online client.
-- `@ottoai/zuno-plaid` supplies the Plaid client.
 - `@ottoai/zuno-testing` supplies fixtures and provider test tools.
+
+Install the current alpha packages:
+
+```bash
+npm install @ottoai/zuno@alpha @ottoai/zuno-oauth@alpha
+npm install @ottoai/zuno-quickbooks@alpha
+npm install --save-dev @ottoai/zuno-testing@alpha
+```
+
+## Planned Packages
+
+- `@ottoai/zuno-plaid` will supply the Plaid client.
 
 ## Project Rules
 
