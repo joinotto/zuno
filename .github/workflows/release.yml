@@ -48,10 +48,6 @@ jobs:
       - name: Run project checks
         run: pnpm check
 
-      - name: Publish core package
-        working-directory: packages/core
-        run: npm publish --access public --tag alpha --provenance --loglevel silly
-
       - name: Publish packages
         run: pnpm release
         env:
