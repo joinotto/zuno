@@ -34,7 +34,6 @@ organization must publish the current project owner.
 
 - Project owner: Otto AI
 - Initial core maintainer: `geekfarmer`
-- Initial npm bootstrap publisher: `toolsotto`
 - Security contact: `security@joinotto.com`
 - Conduct contact: `conduct@joinotto.com`
 
