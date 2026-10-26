@@ -1,5 +1,11 @@
 # @ottoai/zuno-quickbooks
 
+## 0.1.1
+
+### Patch Changes
+
+- 10d42a4: Export the accounting compatibility client and its types from the package root.
+
 ## 0.1.0
 
 ### Minor Changes
