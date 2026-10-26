@@ -2,10 +2,9 @@
 
 This package supplies a QuickBooks Online client for Node.js applications.
 
-The package has two entry points:
-
-- `@ottoai/zuno-quickbooks` supplies provider-native OAuth and API operations.
-- `@ottoai/zuno-quickbooks/compatibility` supplies the accounting response model that Ledger uses.
+The package root supplies provider-native OAuth, API operations, and the optional accounting
+compatibility client. The `@ottoai/zuno-quickbooks/compatibility` entry point remains available for
+existing consumers.
 
 The package does not store tokens, own database tables, or manage application tenants.
 
@@ -61,8 +60,7 @@ The client retries one request with `getAccessToken(true)` after a QuickBooks `4
 ## Use the Accounting Compatibility Client
 
 ```ts
-import { QuickBooksClient } from '@ottoai/zuno-quickbooks'
-import { QuickBooksAccountingClient } from '@ottoai/zuno-quickbooks/compatibility'
+import { QuickBooksAccountingClient, QuickBooksClient } from '@ottoai/zuno-quickbooks'
 
 const provider = new QuickBooksClient({
   environment: 'production',

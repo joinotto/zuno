@@ -2,7 +2,8 @@
 
 This package supplies deterministic test utilities for Zuno provider packages.
 
-Do not use memory stores for production token persistence. The API is experimental.
+Do not use memory stores for production token persistence. The stable `0.1` API follows Semantic
+Versioning.
 
 ## Install
 

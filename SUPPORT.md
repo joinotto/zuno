@@ -2,7 +2,7 @@
 
 ## Current Status
 
-Zuno has no supported public release. Use the repository only for design and development.
+Zuno publishes stable `0.1` packages. QuickBooks has the `community` support level.
 
 ## Support Channels
 
@@ -33,8 +33,13 @@ Include:
 
 ## Version Support
 
-The project will publish a version support table with the first stable release. The table will
-identify security and defect support periods.
+| Package line        | Status           | Support                                  |
+| ------------------- | ---------------- | ---------------------------------------- |
+| Latest `0.1.x`      | Supported        | Security and verified defect corrections |
+| Older `0.1.x`       | Upgrade required | No routine corrections                   |
+| Prerelease versions | Unsupported      | Evaluation only                          |
+
+The project can release a security correction without adding new provider operations.
 
 ## Provider Incidents
 

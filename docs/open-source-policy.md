@@ -4,16 +4,19 @@
 
 This policy defines the minimum controls for public Zuno development.
 
-## Package Release Blockers
+## Package Release Controls
 
-Do not publish packages until all blockers are closed.
+The project completed the bootstrap publication and configured npm trusted publishing.
 
-The current blockers are:
+Before each release:
 
-- no approved version `0.1.0` changeset
-- no completed bootstrap publication
-- no configured npm trusted publishers
-- no second core maintainer for an `official` provider
+- add an approved changeset
+- pass continuous integration
+- pass package-content and type checks
+- publish from the protected release workflow
+- create npm provenance
+
+The project still requires a second core maintainer before it marks a provider as `official`.
 
 ## Required Repository Files
 

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Complete these tasks before the first public package release.
+This document records the active maintainer and release controls.
 
 ## npm Organization
 
@@ -10,22 +10,18 @@ Complete these tasks before the first public package release.
 2. The authenticated npm account is `toolsotto`.
 3. The `toolsotto` account is an organization owner.
 4. The organization requires two-factor authentication.
-5. Publish each package for the first time at version `0.1.0`.
+5. The initial stable packages use version `0.1.0` or later.
 
 The initial packages are:
 
 - `@ottoai/zuno`
 - `@ottoai/zuno-oauth`
 - `@ottoai/zuno-testing`
-- `@ottoai/zuno-quickbooks`
-- `@ottoai/zuno-plaid`
+- `@ottoai/zuno-quickbooks` Plaid is not published.
 
 ## Trusted Publishing
 
-Publish each package once with an authenticated maintainer account. Use staged publishing when the
-npm organization supports it. Revoke any temporary publication token after the bootstrap release.
-
-Create one trusted publisher for each published package.
+Each published package has a trusted publisher. Releases use GitHub Actions and npm OpenID Connect.
 
 Use these values:
 
@@ -70,7 +66,14 @@ The initial core maintainer is `geekfarmer`. The initial npm bootstrap publisher
 
 Add a second maintainer before a provider package reaches the `official` support level.
 
-## First Release
+## Release Process
 
-Do not publish version `0.0.0`. Create a changeset for version `0.1.0`. Run the release workflow
-after all controls are active.
+1. Add a changeset for each public package change.
+2. Open a focused pull request.
+3. Pass all required checks.
+4. Merge the pull request.
+5. Run `pnpm version-packages` on a release branch.
+6. Open and merge the release pull request.
+7. Run the protected `release.yml` workflow.
+8. Approve the `npm` environment deployment.
+9. Verify the npm version, tag, provenance, and package contents.

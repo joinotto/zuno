@@ -2,10 +2,10 @@
 
 ## Current Contribution Status
 
-The project does not accept external code at this time. The maintainers must first configure the
-public contribution controls.
+The project accepts focused issues, documentation, tests, and code contributions.
 
-You can open a discussion about the design. Do not submit copied provider code or customer data.
+Open an issue before a large provider or public API change. Do not submit copied provider code,
+credentials, or customer data.
 
 ## Before You Start
 
@@ -14,12 +14,12 @@ You can open a discussion about the design. Do not submit copied provider code o
 3. Read the [documentation standard](./docs/documentation-standard.md).
 4. Search existing issues.
 5. Open an issue for a large change.
-6. Wait for maintainer approval.
+6. Confirm the proposed scope with a maintainer.
 
 ## Development Requirements
 
-Use the runtime versions that the repository configuration specifies. Use `pnpm` after the workspace
-migration is complete.
+Use the runtime versions that the repository configuration specifies. Use `pnpm` for workspace
+commands.
 
 Do not add a dependency without a license review. Do not commit credentials or production data.
 

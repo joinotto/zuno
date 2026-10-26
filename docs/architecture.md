@@ -1,4 +1,4 @@
-# Target Architecture
+# Architecture
 
 ## Purpose
 

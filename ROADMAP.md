@@ -2,264 +2,183 @@
 
 ## Purpose
 
-This roadmap defines the work for the first stable Zuno release. It does not define release dates.
+This roadmap describes current work and planned provider packages. It does not promise release
+dates.
 
-## Release Conditions
+## Current Release
 
-Zuno must meet these conditions before version `1.0.0`:
+Zuno has stable public `0.1` packages:
 
-- Two provider categories use the same core packages.
-- QuickBooks operates in one production consumer.
-- Each public operation has tests and documentation.
-- Releases include provenance and integrity data.
-- The project has an approved license.
-- The project has a documented support policy.
-- The project has a documented security process.
+- `@ottoai/zuno`
+- `@ottoai/zuno-oauth`
+- `@ottoai/zuno-testing`
+- `@ottoai/zuno-quickbooks`
 
-## Phase 0: Establish the Project
+QuickBooks Online is the first stable provider. The package includes OAuth, native API access,
+accounting operations, transactions, and reports.
 
-### Objective
+## Status Terms
 
-Create a safe public project foundation.
+- **Stable** means the package has a non-prerelease version and follows Semantic Versioning.
+- **Active** means implementation or validation is in progress.
+- **Planned** means the maintainers approved the provider direction.
+- **Discovery** means API access, scope, and maintenance requirements still need validation.
+- **Proposed** means the project has not approved implementation.
 
-### Work
+## Completed: Project Foundation
 
-Completed work:
+- Selected the Apache License 2.0.
+- Published packages under the `@ottoai` npm organization.
+- Configured npm trusted publishing and provenance.
+- Added protected release environments.
+- Added continuous integration, CodeQL, dependency review, and OpenSSF Scorecard.
+- Added contribution, governance, support, and security policies.
+- Added ASD-STE100-based documentation rules.
 
-1. Verified the ownership of all repository content.
-2. Verified the license of all copied reference material.
-3. Selected the Apache License 2.0.
-4. Confirmed the Zuno name and the `@ottoai` npm scope.
-5. Confirmed the `joinotto` GitHub organization.
-6. Approved the governance model.
-7. Configured private security reports.
-8. Added automated documentation checks.
-9. Removed the legacy Worker code from the clean history.
+## Completed: Shared SDK Packages
 
-Remaining work:
+- Added Fetch-based transport.
+- Added timeouts, cancellation, retries, and `Retry-After` support.
+- Added typed provider errors and request metadata.
+- Added pagination and lifecycle hooks.
+- Added OAuth state, PKCE, token, and refresh-lock contracts.
+- Added secret redaction and deterministic fixture tools.
+- Added provider manifests and conformance tests.
 
-1. Publish the first package versions.
-2. Configure an npm trusted publisher for each package.
-3. Add a second core maintainer before an `official` provider release.
+## Stable: QuickBooks Online
 
-### Exit Conditions
+Package: `@ottoai/zuno-quickbooks`
 
-- The maintainers approve the license.
-- The repository can accept external contributions.
-- The repository can publish public packages.
-- All public documents pass the documentation review.
+Delivered capabilities:
 
-## Phase 1: Create the SDK Core
+- OAuth authorization, exchange, refresh, and revocation
+- production and sandbox environments
+- company information
+- accounts, customers, suppliers, classes, and departments
+- native transaction queries
+- General Ledger transaction reconstruction
+- deleted transaction detection
+- profit and loss
+- balance sheet
+- cash flow
+- trial balance
+- grouped reports
+- Ledger-compatible accounting mappings
 
-### Objective
+Current stabilization work:
 
-Create reusable infrastructure without provider business models.
+1. Monitor the first production consumer.
+2. Complete staged migration from Unified to Zuno.
+3. Expand sanitized regression fixtures.
+4. Add attachment operations.
+5. Add webhook verification.
+6. Publish a complete runnable OAuth example.
 
-### Work
+## Planned Next: Plaid
 
-Completed work:
+Package: `@ottoai/zuno-plaid`
 
-1. Created the `pnpm` workspace.
-2. Created `@ottoai/zuno`.
-3. Created `@ottoai/zuno-oauth`.
-4. Created `@ottoai/zuno-testing`.
-5. Added an injected Fetch transport.
-6. Added request timeouts and cancellation.
-7. Added bounded retry control.
-8. Added `Retry-After` support.
-9. Added typed errors.
-10. Added request metadata.
-11. Added pagination helpers.
-12. Added lifecycle hooks.
-13. Added token storage contracts.
-14. Added a distributed refresh-lock contract.
-15. Added automatic secret redaction.
-16. Added record-and-replay test tools.
-17. Added continuous integration checks.
-18. Added package integrity and provenance checks.
+Purpose:
 
-Remaining validation:
+Validate that the category-neutral core works for banking data and cursor-based synchronization.
 
-1. Run the package tests in one non-Node Fetch-compatible runtime.
+Planned capabilities:
 
-### Exit Conditions
+1. Link token creation.
+2. Public token exchange.
+3. Item and institution operations.
+4. Account and balance retrieval.
+5. Transactions Sync.
+6. Identity and liability operations.
+7. Webhook verification.
+8. Item error and reauthorization handling.
+9. Sandbox fixtures and tests.
+10. Optional application adapters.
 
-- Core packages do not import a database.
-- Core packages do not import a web framework.
-- Core packages do not contain accounting types.
-- A test provider passes the conformance tests.
-- Node.js and one Fetch-compatible runtime pass all tests.
+Exit conditions:
 
-## Phase 2: Extract QuickBooks
+- Plaid types remain inside the Plaid package.
+- QuickBooks types remain inside the QuickBooks package.
+- Both providers use the same transport, OAuth, error, and testing primitives.
+- Cursor synchronization has restart and replay tests.
 
-### Objective
+## Discovery: HoneyBook
 
-Create `@ottoai/zuno-quickbooks` from verified provider behavior.
+Package: `@ottoai/zuno-honeybook`
 
-### Work
+Purpose:
 
-1. Document the target QuickBooks contract.
-2. Create sanitized compatibility fixtures.
-3. Implement OAuth authorization.
-4. Implement callback exchange.
-5. Implement token refresh and token revocation.
-6. Implement production and sandbox environments.
-7. Implement company and connection health operations.
-8. Implement accounts and tracking dimensions.
-9. Implement customers, vendors, and items.
-10. Implement native transaction queries.
-11. Implement General Ledger transaction reconstruction.
-12. Implement accounting reports.
-13. Implement change and deletion detection.
-14. Implement attachment operations.
-15. Implement webhook verification.
-16. Add Intuit request metadata.
-17. Add rate-limit behavior.
-18. Add sandbox tests.
+Add a client for HoneyBook workflows without creating a universal CRM model.
 
-### Exit Conditions
+Discovery tasks:
 
-- The package has no application-specific dependency.
-- Report totals match the approved fixtures.
-- Report transaction identifiers match the approved fixtures.
-- Transaction direction matches the approved fixtures.
-- Token refresh is safe across multiple application instances.
+1. Confirm public or partner API access.
+2. Confirm OAuth and webhook requirements.
+3. Record supported resources and rate limits.
+4. Define the first provider-native client surface.
+5. Confirm test-account and fixture requirements.
+6. Complete dependency, license, and security reviews.
 
-## Phase 3: Validate Consumer Adoption
+Candidate capabilities:
 
-### Objective
+- projects
+- contacts
+- invoices and payments
+- sessions or meetings
+- files
+- webhooks
 
-Move one production consumer to released Zuno packages.
+The final capability list depends on approved HoneyBook API access.
 
-### Work
+## Planned: Community Provider Framework
 
-1. Create a consumer-owned compatibility adapter when required.
-2. Publish a prerelease package.
-3. Replace one consumer workspace import.
-4. Run shadow comparisons.
-5. Test OAuth and reauthorization.
-6. Test synchronization and deletion handling.
-7. Test all accounting reports.
-8. Test disconnect and rollback operations.
-9. Monitor one production connection.
-10. Monitor a small production group.
-11. Move all QuickBooks traffic.
-12. Remove copied SDK code from the consumer.
+The project will make provider contributions consistent and reviewable.
 
-### Exit Conditions
-
-- The consumer uses the released QuickBooks package.
-- The observation period has no critical difference.
-- The rollback procedure is tested.
-
-## Phase 4: Publish QuickBooks Stable
-
-### Objective
-
-Publish the first supported provider package.
-
-### Work
-
-1. Publish API reference documentation.
-2. Publish a complete OAuth example.
-3. Publish provider capability data.
-4. Publish the supported API version.
-5. Publish migration instructions.
-6. Test installation from the public registry.
-7. Publish signed release artifacts.
-8. Publish a software bill of materials.
-
-### Exit Conditions
-
-- A new user can connect a sandbox company.
-- A new user can list accounts.
-- All supported operations have examples.
-- The release process is repeatable.
-
-## Phase 5: Add Plaid
-
-### Objective
-
-Test the core design with a banking provider.
-
-### Work
-
-1. Implement Link token creation.
-2. Implement public token exchange.
-3. Implement Item and institution operations.
-4. Implement accounts and balances.
-5. Implement identity and liabilities.
-6. Implement Transactions Sync.
-7. Implement webhook verification.
-8. Implement Item error handling.
-9. Implement reauthorization.
-10. Add sandbox fixtures.
-11. Add sandbox tests.
-12. Add an optional consumer adapter.
-
-### Exit Conditions
-
-- Plaid does not add banking types to `@ottoai/zuno`.
-- QuickBooks does not add accounting types to `@ottoai/zuno`.
-- Both providers use the same transport and test contracts.
-
-## Phase 6: Support Community Providers
-
-### Objective
-
-Make provider contributions consistent and reviewable.
-
-### Work
+Planned work:
 
 1. Publish a provider template.
 2. Publish a provider manifest schema.
-3. Publish provider conformance tests.
-4. Publish fixture redaction tools.
-5. Define provider support levels.
-6. Define provider maintainer duties.
-7. Add provider ownership rules.
-8. Add package size reports.
-9. Add compatibility reports.
+3. Publish provider conformance suites.
+4. Publish fixture-redaction guidance.
+5. Define provider support levels and maintainer duties.
+6. Add provider ownership rules.
+7. Add package-size and compatibility reports.
 
-### Candidate Providers
+Candidate community providers:
 
 - Xero
 - Sage
+- Stripe
 - Google Drive
 - Dropbox
 - Slack
 - Microsoft Teams
-- Stripe
 
-## Phase 7: Evaluate Hosted Services
+## Future: Optional Hosted Services
 
-### Objective
+Zuno remains package-first. Optional hosted services can include:
 
-Offer optional infrastructure without changing the package-first design.
+- OAuth callback handling
+- encrypted connection storage
+- webhook delivery
+- durable synchronization workers
+- connection health monitoring
 
-### Candidate Services
+Self-hosted applications must not require these services.
 
-- OAuth callback service
-- Encrypted connection store
-- Webhook delivery service
-- Durable synchronization workers
-- Connection health dashboard
+## Release Plan
 
-Hosted services must use the public Zuno packages. Self-hosted applications must not require hosted
-Zuno services.
-
-## Version Plan
-
-- `0.1.x` stabilizes core and QuickBooks APIs.
-- `0.2.x` completes the first production adoption.
-- `0.3.x` adds Plaid.
-- `1.0.0` provides stable contracts for two provider categories.
+- `0.1.x` stabilizes the shared packages and QuickBooks.
+- `0.2.x` completes production adoption and migration tooling.
+- `0.3.x` introduces Plaid.
+- A later `0.x` release can introduce HoneyBook after discovery.
+- `1.0.0` requires stable contracts across at least two provider categories.
 
 ## Next Actions
 
-1. Publish the first public alpha packages.
-2. Configure npm trusted publishing.
-3. Document the QuickBooks operation contract.
-4. Create sanitized QuickBooks fixtures.
-5. Implement QuickBooks OAuth and company operations.
-6. Publish the first QuickBooks client prerelease.
+1. Complete the QuickBooks production observation period.
+2. Merge the Ledger direct-package migration.
+3. Publish a QuickBooks OAuth example application.
+4. Create the Plaid provider design and capability manifest.
+5. Confirm Plaid sandbox credentials and test data.
+6. Start the HoneyBook API-access assessment.

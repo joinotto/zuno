@@ -88,15 +88,17 @@ This reference covers the stable `0.1` API. Semantic Versioning controls public 
 
 - `QuickBooksOAuth` creates authorization URLs and exchanges, refreshes, or revokes tokens.
 - `QuickBooksClient` sends authenticated QuickBooks Online requests.
+- `QuickBooksAccountingClient` supplies stable accounting operations and mappings.
 - `QuickBooksClient.getCompanyInfo()` retrieves company information.
 - `QuickBooksClient.request()` sends a provider-native request.
 - `QuickBooksClient.companyPath()` creates a realm-scoped API path.
 - `QuickBooksClient.withMinorVersion()` adds the configured QuickBooks minor version.
 - `quickBooksManifest` describes implemented QuickBooks environments and capabilities.
 
-## `@ottoai/zuno-quickbooks/compatibility`
+## QuickBooks Accounting Compatibility
 
-- `QuickBooksAccountingClient` supplies the Ledger accounting operations.
+- `QuickBooksAccountingClient` is available from the package root.
+- The `@ottoai/zuno-quickbooks/compatibility` entry point remains available.
 - Account operations list and retrieve accounts.
 - Contact operations list, retrieve, create, and update customers or suppliers.
 - Category operations list and retrieve QuickBooks classes and departments.
@@ -106,5 +108,4 @@ This reference covers the stable `0.1` API. Semantic Versioning controls public 
 - Mapping exports convert approved QuickBooks payloads into the compatibility model.
 - `collectDeletedTransactionIds()` extracts deleted transaction IDs from CDC responses.
 
-The compatibility entry point is optional. Provider-native applications can use the main entry point
-only.
+The accounting client is optional. Provider-native applications can use `QuickBooksClient` directly.

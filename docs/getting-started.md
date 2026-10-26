@@ -6,12 +6,14 @@
 - an application-owned Fetch implementation
 - secure token persistence for OAuth providers
 
-## Install Core Packages
+## Install a Provider
 
 ```bash
-pnpm add @ottoai/zuno @ottoai/zuno-oauth
-pnpm add --save-dev @ottoai/zuno-testing
+pnpm add @ottoai/zuno-quickbooks
 ```
+
+The provider installs its required shared packages. Install core packages directly only when you
+build a provider or custom transport.
 
 Use exact versions in production lockfiles. Test provider upgrades before deployment.
 
@@ -77,8 +79,11 @@ const testTransport = createTransport({
 ## Connect to QuickBooks
 
 ```ts
-import { QuickBooksClient, QuickBooksOAuth } from '@ottoai/zuno-quickbooks'
-import { QuickBooksAccountingClient } from '@ottoai/zuno-quickbooks/compatibility'
+import {
+  QuickBooksAccountingClient,
+  QuickBooksClient,
+  QuickBooksOAuth,
+} from '@ottoai/zuno-quickbooks'
 
 const oauth = new QuickBooksOAuth({
   clientId: process.env.QUICKBOOKS_CLIENT_ID!,
