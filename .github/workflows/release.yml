@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22.22.2
-          registry-url: https://registry.npmjs.org
 
       - name: Enable Corepack
         run: corepack enable
@@ -35,7 +34,7 @@ jobs:
           PNPM_HOME: ${{ runner.temp }}/pnpm-bin
         run: |
           echo "${PNPM_HOME}" >> "${GITHUB_PATH}"
-          PATH="${PNPM_HOME}:${PATH}" pnpm add --global npm@11.6.4 \
+          PATH="${PNPM_HOME}:${PATH}" pnpm add --global npm@11.21.0 \
             --global-dir "${RUNNER_TEMP}/pnpm-global" \
             --global-bin-dir "${PNPM_HOME}"
 
@@ -52,4 +51,3 @@ jobs:
         run: pnpm release
         env:
           NPM_CONFIG_PROVENANCE: true
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
