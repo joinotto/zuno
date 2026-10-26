@@ -9,7 +9,7 @@ This roadmap defines the work for the first stable Zuno release. It does not def
 Zuno must meet these conditions before version `1.0.0`:
 
 - Two provider categories use the same core packages.
-- QuickBooks operates in Ledger production.
+- QuickBooks operates in one production consumer.
 - Each public operation has tests and documentation.
 - Releases include provenance and integrity data.
 - The project has an approved license.
@@ -94,11 +94,11 @@ Remaining validation:
 
 ### Objective
 
-Create `@ottoai/zuno-quickbooks` from verified Ledger behavior.
+Create `@ottoai/zuno-quickbooks` from verified provider behavior.
 
 ### Work
 
-1. Document the current Ledger contract.
+1. Document the target QuickBooks contract.
 2. Create sanitized compatibility fixtures.
 3. Implement OAuth authorization.
 4. Implement callback exchange.
@@ -119,36 +119,36 @@ Create `@ottoai/zuno-quickbooks` from verified Ledger behavior.
 
 ### Exit Conditions
 
-- The package has no `@ledger/*` dependency.
+- The package has no application-specific dependency.
 - Report totals match the approved fixtures.
 - Report transaction identifiers match the approved fixtures.
 - Transaction direction matches the approved fixtures.
 - Token refresh is safe across multiple application instances.
 
-## Phase 3: Add the Ledger Adapter
+## Phase 3: Validate Consumer Adoption
 
 ### Objective
 
-Move Ledger to released Zuno packages.
+Move one production consumer to released Zuno packages.
 
 ### Work
 
-1. Create the temporary `@ottoai/zuno-compat-unified` package.
+1. Create a consumer-owned compatibility adapter when required.
 2. Publish a prerelease package.
-3. Replace one Ledger workspace import.
+3. Replace one consumer workspace import.
 4. Run shadow comparisons.
 5. Test OAuth and reauthorization.
 6. Test synchronization and deletion handling.
 7. Test all accounting reports.
 8. Test disconnect and rollback operations.
-9. Monitor one production company.
+9. Monitor one production connection.
 10. Monitor a small production group.
 11. Move all QuickBooks traffic.
-12. Remove the Ledger workspace copy.
+12. Remove copied SDK code from the consumer.
 
 ### Exit Conditions
 
-- Ledger uses the released QuickBooks package.
+- The consumer uses the released QuickBooks package.
 - The observation period has no critical difference.
 - The rollback procedure is tested.
 
@@ -195,7 +195,7 @@ Test the core design with a banking provider.
 9. Implement reauthorization.
 10. Add sandbox fixtures.
 11. Add sandbox tests.
-12. Add an optional Ledger adapter.
+12. Add an optional consumer adapter.
 
 ### Exit Conditions
 
@@ -251,15 +251,15 @@ Zuno services.
 ## Version Plan
 
 - `0.1.x` stabilizes core and QuickBooks APIs.
-- `0.2.x` completes the Ledger migration.
+- `0.2.x` completes the first production adoption.
 - `0.3.x` adds Plaid.
 - `1.0.0` provides stable contracts for two provider categories.
 
 ## Next Actions
 
-1. Complete the QuickBooks pilot in Ledger.
-2. Configure the `@ottoai` npm organization.
-3. Approve the architecture.
-4. Create the package workspace.
-5. Create compatibility fixtures.
-6. Publish the first internal prerelease.
+1. Publish the first public alpha packages.
+2. Configure npm trusted publishing.
+3. Document the QuickBooks operation contract.
+4. Create sanitized QuickBooks fixtures.
+5. Implement QuickBooks OAuth and company operations.
+6. Publish the first QuickBooks client prerelease.

@@ -31,9 +31,10 @@ These products install multiple Zuno provider packages. They own the application
 Provider maintainers add or maintain one provider package. They use the Zuno test and release
 process.
 
-### Ledger
+### Integration Platform Teams
 
-Ledger uses the QuickBooks and Plaid packages. Ledger keeps its database and synchronization logic.
+Integration platforms use provider packages while retaining their databases, queues, and application
+models.
 
 ## Supported Use Cases
 

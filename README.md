@@ -21,7 +21,6 @@ contains its provider boundary and capability manifest.
 - `@ottoai/zuno-quickbooks` supplies the QuickBooks Online client.
 - `@ottoai/zuno-plaid` supplies the Plaid client.
 - `@ottoai/zuno-testing` supplies fixtures and provider test tools.
-- `@ottoai/zuno-compat-unified` supplies a temporary Ledger migration adapter.
 
 ## Project Rules
 
@@ -43,7 +42,7 @@ contains its provider boundary and capability manifest.
 - [Open-source policy](./docs/open-source-policy.md)
 - [License and provenance review](./docs/license-and-provenance.md)
 - [Provenance audit](./docs/provenance-audit-2026-10-25.md)
-- [Unified SDK review](./docs/unified-sdk-review.md)
+- [Provider SDK design](./docs/provider-sdk-design.md)
 - [Contribution guide](./CONTRIBUTING.md)
 - [Governance](./GOVERNANCE.md)
 - [Security policy](./SECURITY.md)
@@ -52,8 +51,8 @@ contains its provider boundary and capability manifest.
 
 ## First Delivery
 
-The first delivery extracts the QuickBooks code that Ledger uses. Compatibility tests will compare
-the package with the current Ledger behavior.
+The first delivery implements a provider-native QuickBooks client. Compatibility tests will compare
+the package with approved provider fixtures.
 
 Plaid is the second provider. Plaid will test the category-neutral core design.
 

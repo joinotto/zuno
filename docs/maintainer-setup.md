@@ -19,7 +19,6 @@ The initial packages are:
 - `@ottoai/zuno-testing`
 - `@ottoai/zuno-quickbooks`
 - `@ottoai/zuno-plaid`
-- `@ottoai/zuno-compat-unified`
 
 ## Trusted Publishing
 

@@ -25,9 +25,9 @@ Application
   └─ maps provider data into application models
 
 Application adapters
-  ├─ Ledger adapter
-  ├─ Unified compatibility adapter
-  └─ other explicit application adapters
+  ├─ application compatibility adapters
+  ├─ legacy migration adapters
+  └─ other explicit consumer adapters
 
 Provider packages
   ├─ QuickBooks
@@ -61,15 +61,13 @@ providers/
   plaid/
 
 adapters/
-  compat-unified/
-  ledger/
+  example-compat/
 
 examples/
   node-api/
   cloudflare-worker/
 
 docs/
-legacy/
 ```
 
 ## Core Packages
@@ -310,20 +308,5 @@ Use provider sandbox accounts. Use synthetic data only. Delete records that a te
 
 ### Consumer Tests
 
-Ledger owns its application compatibility tests. The tests compare the workspace code with the
-released package.
-
-## Legacy Prototype
-
-The first prototype combines several responsibilities.
-
-It combines:
-
-- hosted routes
-- token persistence
-- queue control
-- normalized accounting schemas
-- provider clients
-
-Do not use these abstractions as the new SDK core. Move useful code only after the provenance and
-compatibility reviews.
+Each consumer owns its application compatibility tests. These tests compare approved behavior with
+the released package.

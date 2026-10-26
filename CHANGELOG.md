@@ -24,6 +24,4 @@ package release.
 
 ### Changed
 
-- Marked the Cloudflare Worker as a legacy prototype.
-- Moved unverified provider references outside maintained documentation.
 - Prepared the first four packages as version `0.1.0-alpha.0`.
