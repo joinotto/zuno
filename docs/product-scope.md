@@ -58,6 +58,14 @@ models.
 - Process provider webhooks.
 - Handle provider reauthorization.
 
+### Client Workflows
+
+- Read provider-native projects and contacts.
+- Read supported invoices and payment records.
+- Read sessions, files, and workflow state.
+- Process provider webhooks.
+- Preserve provider identifiers and raw data.
+
 ### Storage
 
 - List and search files.
@@ -106,8 +114,8 @@ The maintainers approved these decisions:
 1. Use the Apache License 2.0.
 2. Use the `@ottoai` npm scope.
 3. Publish only the clean Zuno repository history.
-4. Support Node.js 22.18.0 or later for the first release.
-5. Publish QuickBooks `0.1` with a stable API and the `community` support level.
+4. Support Node.js 22.18.0 or later for the `0.1` release line.
+5. Maintain QuickBooks `0.1` as a stable API with the `community` support level.
 6. Send private security reports to `security@joinotto.com`.
 7. Use the `ottoai` npm organization for package ownership.
 
