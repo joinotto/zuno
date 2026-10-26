@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420" role="img" aria-labelledby="title description">
+  <title id="title">Zuno</title>
+  <desc id="description">Provider-native TypeScript integration SDKs. A friendly connector mascot stands beside the Zuno name.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0c1830"/>
+      <stop offset="1" stop-color="#17102d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#45d9ff"/>
+      <stop offset="0.52" stop-color="#6f8cff"/>
+      <stop offset="1" stop-color="#a76cff"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ecfbff"/>
+      <stop offset="1" stop-color="#b9e9ff"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="420" rx="28" fill="url(#background)"/>
+  <circle cx="1260" cy="54" r="180" fill="#6657ff" opacity="0.08"/>
+  <circle cx="1110" cy="420" r="230" fill="#24d4ff" opacity="0.06"/>
+  <path d="M520 82H1320M520 338H1320" stroke="#8bdcff" stroke-opacity="0.08"/>
+
+  <g transform="translate(82 52)">
+    <circle cx="158" cy="160" r="138" fill="#45d9ff" opacity="0.08"/>
+    <circle cx="158" cy="160" r="112" fill="#6f8cff" opacity="0.09"/>
+    <path d="M156 42V18" stroke="#8fe7ff" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="156" cy="13" r="11" fill="#c8f6ff" filter="url(#glow)"/>
+    <path d="M77 130C77 75 112 51 157 51C202 51 237 75 237 130V208C237 260 202 286 157 286C112 286 77 260 77 208Z" fill="url(#accent)"/>
+    <path d="M96 132C96 92 120 76 157 76C194 76 218 92 218 132V191C218 231 194 248 157 248C120 248 96 231 96 191Z" fill="url(#face)"/>
+    <ellipse cx="132" cy="158" rx="11" ry="16" fill="#0a1730"/>
+    <ellipse cx="182" cy="158" rx="11" ry="16" fill="#0a1730"/>
+    <circle cx="136" cy="153" r="4" fill="#ffffff"/>
+    <circle cx="186" cy="153" r="4" fill="#ffffff"/>
+    <path d="M137 194C149 205 166 205 178 194" fill="none" stroke="#334a7b" stroke-width="7" stroke-linecap="round"/>
+    <path d="M78 150L43 133L28 151L58 178" fill="none" stroke="#62cfff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="25" cy="151" r="15" fill="#a76cff"/>
+    <path d="M237 150L272 133L287 151L257 178" fill="none" stroke="#8f7eff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="290" cy="151" r="15" fill="#45d9ff"/>
+    <path d="M124 283L112 312M190 283L202 312" stroke="#7792ff" stroke-width="16" stroke-linecap="round"/>
+    <path d="M92 314H126M188 314H222" stroke="#c2ecff" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="44" cy="80" r="8" fill="#45d9ff"/>
+    <circle cx="278" cy="70" r="7" fill="#a76cff"/>
+    <circle cx="293" cy="245" r="6" fill="#45d9ff"/>
+    <path d="M37 80H72M242 70H278M237 245H293" stroke="#7197ff" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <g transform="translate(440 84)">
+    <text x="0" y="142" fill="#f6fbff" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="150" font-weight="800" letter-spacing="-7">zuno</text>
+    <circle cx="370" cy="119" r="11" fill="#45d9ff" filter="url(#glow)"/>
+    <text x="5" y="202" fill="#b9c9e7" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="500">Provider-native TypeScript integration SDKs</text>
+    <g transform="translate(5 246)" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="650">
+      <rect width="226" height="50" rx="25" fill="#153c35" stroke="#35d399" stroke-opacity="0.45"/>
+      <circle cx="27" cy="25" r="7" fill="#35d399"/>
+      <text x="46" y="33" fill="#c6ffea">QuickBooks stable</text>
+      <rect x="246" width="156" height="50" rx="25" fill="#172c4f" stroke="#45d9ff" stroke-opacity="0.4"/>
+      <circle cx="273" cy="25" r="7" fill="#45d9ff"/>
+      <text x="292" y="33" fill="#d4f7ff">Plaid next</text>
+      <rect x="422" width="224" height="50" rx="25" fill="#2c2048" stroke="#a76cff" stroke-opacity="0.45"/>
+      <circle cx="449" cy="25" r="7" fill="#a76cff"/>
+      <text x="468" y="33" fill="#efdcff">Community-built</text>
+    </g>
+  </g>
+</svg>

@@ -1,81 +1,187 @@
-# Zuno
+<p align="center">
+  <img src="./docs/assets/zuno-header.svg" alt="Zuno. Provider-native TypeScript integration SDKs." width="100%">
+</p>
 
-Zuno is an open-source TypeScript SDK for external integrations.
+<p align="center">
+  <a href="https://github.com/joinotto/zuno/actions/workflows/ci.yml"><img alt="Continuous integration" src="https://github.com/joinotto/zuno/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://www.npmjs.com/package/@ottoai/zuno-quickbooks"><img alt="QuickBooks npm version" src="https://img.shields.io/npm/v/%40ottoai%2Fzuno-quickbooks?label=quickbooks"></a>
+  <a href="./LICENSE"><img alt="Apache License 2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
+  <a href="./SECURITY.md"><img alt="Security policy" src="https://img.shields.io/badge/security-policy-green"></a>
+  <a href="https://github.com/joinotto/zuno/actions/workflows/scorecard.yml"><img alt="OpenSSF Scorecard" src="https://github.com/joinotto/zuno/actions/workflows/scorecard.yml/badge.svg"></a>
+</p>
 
-Each provider package keeps the native provider model. Zuno does not force different providers into
-one data model.
+<p align="center">
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#packages">Packages</a> ·
+  <a href="#providers">Providers</a> ·
+  <a href="./ROADMAP.md">Roadmap</a> ·
+  <a href="./CONTRIBUTING.md">Contributing</a> ·
+  <a href="./SECURITY.md">Security</a>
+</p>
 
-## Project Status
+Zuno is an open-source TypeScript project for provider-native integrations. Each provider package
+keeps the provider's names, fields, identifiers, and behavior. Zuno does not force unrelated
+providers into one universal business model.
 
-The project is in active development. The QuickBooks package has a stable public API.
+QuickBooks Online is the first stable provider. Plaid is next. HoneyBook is in discovery.
 
-The project uses the Apache License 2.0. The clean public history contains project-owned work.
+## Why Zuno
 
-The shared transport, OAuth, and testing packages are implemented. The QuickBooks package supplies
-OAuth, provider-native API access, and an optional accounting compatibility entry point.
+- Install only the providers that your application uses.
+- Keep access to native provider data.
+- Use shared transport, OAuth, retry, pagination, and test tools.
+- Store tokens and tenant data in your own application.
+- Use the packages without a hosted Zuno service.
+- Release each provider independently.
 
-## Available Packages
+## Quick Start
 
-- `@ottoai/zuno` supplies transport, errors, retries, hooks, and pagination.
-- `@ottoai/zuno-oauth` supplies OAuth 2.0 operations and token contracts.
-- `@ottoai/zuno-quickbooks` supplies the QuickBooks Online client.
-- `@ottoai/zuno-testing` supplies fixtures and provider test tools.
-
-Install the stable packages:
+Install the QuickBooks provider:
 
 ```bash
-npm install @ottoai/zuno @ottoai/zuno-oauth
 npm install @ottoai/zuno-quickbooks
-npm install --save-dev @ottoai/zuno-testing
 ```
 
-## Planned Packages
+Create the provider and accounting clients:
 
-- `@ottoai/zuno-plaid` will supply the Plaid client.
+```ts
+import { QuickBooksAccountingClient, QuickBooksClient } from '@ottoai/zuno-quickbooks'
+
+const provider = new QuickBooksClient({
+  environment: 'production',
+  getAccessToken: readOrRefreshAccessToken,
+  realmId: 'quickbooks-realm-id',
+})
+
+const accounting = new QuickBooksAccountingClient(provider)
+const accounts = await accounting.listAccounts()
+const profitAndLoss = await accounting.listProfitLoss({
+  startGte: '2026-01-01',
+  endLt: '2026-12-31',
+})
+```
+
+Your application must validate OAuth state, encrypt tokens, isolate tenants, and store each rotated
+refresh token.
+
+## Providers
+
+| Provider          | Package                   | Status       | Support      |
+| ----------------- | ------------------------- | ------------ | ------------ |
+| QuickBooks Online | `@ottoai/zuno-quickbooks` | Stable `0.1` | Community    |
+| Plaid             | `@ottoai/zuno-plaid`      | Planned next | Not released |
+| HoneyBook         | `@ottoai/zuno-honeybook`  | Discovery    | Not released |
+
+The status describes the Zuno package. It does not describe provider uptime or provider API access.
+
+## Packages
+
+### `@ottoai/zuno`
+
+Shared transport and runtime primitives:
+
+- Fetch-based requests
+- timeouts and cancellation
+- bounded retries
+- pagination
+- typed errors
+- lifecycle hooks
+- provider manifests
+- secret redaction
+
+### `@ottoai/zuno-oauth`
+
+Provider-neutral OAuth primitives:
+
+- authorization URLs
+- OAuth state and PKCE helpers
+- token contracts
+- coordinated token refresh
+- refresh-lock contracts
+
+### `@ottoai/zuno-quickbooks`
+
+QuickBooks Online operations:
+
+- OAuth exchange, refresh, and revocation
+- provider-native API requests
+- company information
+- accounts, contacts, and categories
+- transactions and deleted transaction identifiers
+- profit and loss, balance sheet, cash flow, and trial balance reports
+- grouped reports
+- optional accounting compatibility mappings
+
+### `@ottoai/zuno-testing`
+
+Development-only provider tools:
+
+- sanitized HTTP recording
+- deterministic fixture replay
+- memory token providers
+- provider manifest checks
+- framework-neutral conformance tests
+
+## Package Model
+
+Applications install provider packages directly:
+
+```bash
+npm install @ottoai/zuno-quickbooks
+npm install @ottoai/zuno-plaid
+```
+
+A provider package installs the shared packages that it needs. Applications do not need an umbrella
+package.
+
+```text
+Application
+  ├─ owns tenants, tokens, databases, queues, and encryption
+  ├─ @ottoai/zuno-quickbooks
+  └─ @ottoai/zuno-plaid
+       ├─ @ottoai/zuno
+       └─ @ottoai/zuno-oauth
+```
 
 ## Project Rules
 
 - Provider packages use native provider names and fields.
 - Applications own tokens, encryption, tenants, databases, and queues.
-- Core packages contain no accounting model.
-- Provider packages do not depend on hosted Zuno services.
-- Public operations include tests and verified documentation.
+- Core packages contain no accounting, banking, CRM, or storage model.
+- Provider packages do not require a hosted Zuno service.
+- Public operations include tests and documentation.
 - Logs and fixtures do not contain secrets or customer data.
 
-## Documents
+## Documentation
 
-- [Roadmap](./ROADMAP.md)
-- [Product scope](./docs/product-scope.md)
-- [Architecture](./docs/architecture.md)
 - [Getting started](./docs/getting-started.md)
 - [API reference](./docs/api-reference.md)
-- [Documentation standard](./docs/documentation-standard.md)
-- [Open-source policy](./docs/open-source-policy.md)
-- [License and provenance review](./docs/license-and-provenance.md)
-- [Provenance audit](./docs/provenance-audit-2026-10-25.md)
+- [Architecture](./docs/architecture.md)
+- [Product scope](./docs/product-scope.md)
 - [Provider SDK design](./docs/provider-sdk-design.md)
-- [QuickBooks provider](./docs/providers/quickbooks.md)
-- [Ledger migration guide](./docs/providers/quickbooks-ledger-migration.md)
+- [QuickBooks guide](./docs/providers/quickbooks.md)
+- [QuickBooks Ledger migration](./docs/providers/quickbooks-ledger-migration.md)
+- [Plaid plan](./docs/providers/plaid.md)
+- [HoneyBook discovery](./docs/providers/honeybook.md)
+- [Roadmap](./ROADMAP.md)
 - [Contribution guide](./CONTRIBUTING.md)
-- [Governance](./GOVERNANCE.md)
-- [Security policy](./SECURITY.md)
 - [Support policy](./SUPPORT.md)
-- [Maintainer setup](./docs/maintainer-setup.md)
+- [Security policy](./SECURITY.md)
+- [Governance](./GOVERNANCE.md)
 
-## QuickBooks Delivery
+## Compatibility
 
-The first delivery implements the provider-native QuickBooks client and the Ledger accounting
-compatibility entry point. Automated tests cover OAuth, retries, mappings, reports, and
-transactions.
+The stable `0.1` packages require Node.js `22.18.0` or later and use ESM.
 
-Plaid is the second provider. Plaid will test the category-neutral core design.
+Zuno follows Semantic Versioning. A provider package can release without changing the version of
+other packages.
 
-## Documentation Language
+## Support
 
-Public documentation follows the project writing rules. The rules use ASD-STE100 Issue 9 principles.
+QuickBooks has the `community` support level. `geekfarmer` maintains the provider.
 
-The project does not claim certified ASD-STE100 conformance. Certified conformance requires the
-official specification and a qualified review.
+Use GitHub issues for verified defects and GitHub discussions for design questions. Report security
+issues through GitHub private vulnerability reporting or `security@joinotto.com`.
 
 ## License
 
