@@ -16,6 +16,7 @@ const contentScanExclusions = new Set(['scripts/check-public-repo.mjs'])
 const forbiddenPaths = [
   /(^|\/)\.env(?:\.|$)/u,
   /(^|\/)(?:coverage|dist|node_modules)\//u,
+  /^docs\/providers\/quickbooks-ledger-migration\.md$/u,
   /\.(?:key|p12|pem|pfx|tgz|zip)$/u,
 ]
 
@@ -63,6 +64,18 @@ const forbiddenContent = [
   {
     label: 'removed prototype branch',
     pattern: /local\/prototype-history-/gu,
+  },
+  {
+    label: 'private consumer schema',
+    pattern: /connection_oauth_session/gu,
+  },
+  {
+    label: 'private consumer migration',
+    pattern: /(?:Ledger-compatible accounting|production consumer|Unified to Zuno)/giu,
+  },
+  {
+    label: 'obsolete bootstrap publisher',
+    pattern: /toolsotto/gu,
   },
 ]
 

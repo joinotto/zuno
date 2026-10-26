@@ -63,16 +63,15 @@ Delivered capabilities:
 - cash flow
 - trial balance
 - grouped reports
-- Ledger-compatible accounting mappings
+- optional accounting compatibility mappings
 
 Current stabilization work:
 
-1. Monitor the first production consumer.
-2. Complete staged migration from Unified to Zuno.
-3. Expand sanitized regression fixtures.
-4. Add attachment operations.
-5. Add webhook verification.
-6. Publish a complete runnable OAuth example.
+1. Monitor stable package behavior.
+2. Expand sanitized regression fixtures.
+3. Add attachment operations.
+4. Add webhook verification.
+5. Publish a complete runnable OAuth example.
 
 ## Planned Next: Plaid
 
@@ -169,16 +168,15 @@ Self-hosted applications must not require these services.
 ## Release Plan
 
 - `0.1.x` stabilizes the shared packages and QuickBooks.
-- `0.2.x` completes production adoption and migration tooling.
+- `0.2.x` expands QuickBooks operations and compatibility tooling.
 - `0.3.x` introduces Plaid.
 - A later `0.x` release can introduce HoneyBook after discovery.
 - `1.0.0` requires stable contracts across at least two provider categories.
 
 ## Next Actions
 
-1. Complete the QuickBooks production observation period.
-2. Merge the Ledger direct-package migration.
-3. Publish a QuickBooks OAuth example application.
-4. Create the Plaid provider design and capability manifest.
-5. Confirm Plaid sandbox credentials and test data.
-6. Start the HoneyBook API-access assessment.
+1. Complete the QuickBooks stable-release observation period.
+2. Publish a QuickBooks OAuth example application.
+3. Create the Plaid provider design and capability manifest.
+4. Confirm Plaid sandbox credentials and test data.
+5. Start the HoneyBook API-access assessment.
