@@ -10,4 +10,4 @@ import { quickBooksManifest } from '@ottoai/zuno-quickbooks'
 console.log(quickBooksManifest.capabilities.reports)
 ```
 
-The package does not contain the Ledger compatibility adapter.
+The package does not contain application compatibility adapters.
