@@ -10,6 +10,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 const root = fileURLToPath(new URL('..', import.meta.url))
 const packageDirectories = await findPackageDirectories()
+const rootPackage = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'))
 const releaseWorkflow = await readFile(join(root, '.github/workflows/release.yml'), 'utf8')
 const failures = []
 const names = new Set()
@@ -67,6 +68,11 @@ check(
   !/registry-url|NODE_AUTH_TOKEN|NPM_TOKEN/u.test(releaseWorkflow),
   '.github/workflows/release.yml',
   'Release workflow must not configure token-based npm authentication.',
+)
+check(
+  rootPackage.scripts?.release === 'pnpm build && node scripts/publish-packages.mjs',
+  'package.json',
+  'Release script must use the direct npm publisher.',
 )
 
 if (failures.length > 0) {

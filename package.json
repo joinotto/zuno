@@ -19,7 +19,7 @@
     "lint": "eslint .",
     "package:check": "pnpm -r --if-present package:check",
     "public:check": "node scripts/check-public-repo.mjs",
-    "release": "pnpm build && changeset publish",
+    "release": "pnpm build && node scripts/publish-packages.mjs",
     "release:check": "pnpm check",
     "release:validate": "node scripts/check-release.mjs",
     "test": "vitest run --coverage --configLoader native --no-fsModuleCache",
