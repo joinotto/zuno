@@ -89,7 +89,14 @@ function validateTarball(directory, label) {
     return
   }
 
-  const [pack] = JSON.parse(result.stdout)
+  const output = JSON.parse(result.stdout)
+  const pack = Array.isArray(output) ? output[0] : output
+
+  if (pack === undefined) {
+    failures.push(`${label}: npm pack returned no package metadata.`)
+    return
+  }
+
   const files = new Set(pack.files.map((file) => file.path))
 
   for (const file of requiredPackageFiles) {
