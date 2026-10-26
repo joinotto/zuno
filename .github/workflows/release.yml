@@ -51,5 +51,4 @@ jobs:
       - name: Publish packages
         run: pnpm release
         env:
-          NPM_CONFIG_LOGLEVEL: verbose
           NPM_CONFIG_PROVENANCE: true
