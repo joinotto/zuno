@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
+export { collectDeletedTransactionIds, QuickBooksAccountingClient } from './client.js'
+export type { QuickBooksAccountingClientOptions, QuickBooksAccountingLogger } from './client.js'
 export {
   contactToQuickBooks,
   decodeContactId,
