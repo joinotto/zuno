@@ -12,12 +12,10 @@ from an external author. The project could not verify redistribution rights for 
 The project removed the previous history from the public `main` branch. The project did not copy the
 prototype source into the clean branch.
 
-## Local Backup
+## Backup Removal
 
-A local branch keeps the previous history. The branch name is `local/prototype-history-2026-10-25`.
-
-Do not push this branch to a public remote. Delete the branch after the legal review or required
-evidence capture.
+The project deleted the local backup branch and the old prototype remotes on 2026-10-25. The
+repository has no reference to the previous source history.
 
 ## Approved Content
 
@@ -27,9 +25,9 @@ documents.
 New source files must use the Apache License 2.0. New package metadata must use the `Apache-2.0`
 SPDX identifier.
 
-## Legacy Worker
+## Prototype Source
 
 The project did not move the old Worker source. The previous source has no verified license.
 
-The `legacy/worker` directory contains only a provenance notice. Reimplement required behavior from
+No prototype source or placeholder directory is tracked. Reimplement required behavior from
 authorized sources.
