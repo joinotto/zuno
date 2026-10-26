@@ -34,6 +34,11 @@ for (const directory of packageDirectories) {
   check(packageData.type === 'module', label, 'Package type must be module.')
   check(packageData.private !== true, label, 'Public package must not be private.')
   check(packageData.publishConfig?.access === 'public', label, 'Package access must be public.')
+  check(
+    packageData.repository?.url === 'https://github.com/joinotto/zuno',
+    label,
+    'Package repository URL must match the trusted publisher repository.',
+  )
   check(packageData.exports?.['.'] !== undefined, label, 'Package must export its main entry.')
 
   if (typeof packageData.name === 'string') {
