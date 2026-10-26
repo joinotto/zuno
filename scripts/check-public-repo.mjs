@@ -10,6 +10,7 @@ const failures = []
 const trackedFiles = execFileSync('git', ['ls-files', '-z'], { encoding: 'utf8' })
   .split('\0')
   .filter(Boolean)
+let scannedFileCount = 0
 const contentScanExclusions = new Set(['scripts/check-public-repo.mjs'])
 
 const forbiddenPaths = [
@@ -66,13 +67,25 @@ const forbiddenContent = [
 ]
 
 for (const file of trackedFiles) {
+  let content
+
+  try {
+    content = await readFile(file)
+  } catch (error) {
+    if (error instanceof Error && 'code' in error && error.code === 'ENOENT') {
+      continue
+    }
+
+    throw error
+  }
+
+  scannedFileCount += 1
+
   for (const pattern of forbiddenPaths) {
     if (pattern.test(file)) {
       failures.push(`${file}: forbidden tracked path`)
     }
   }
-
-  const content = await readFile(file)
 
   if (content.includes(0)) {
     continue
@@ -104,7 +117,7 @@ if (failures.length > 0) {
   console.error(failures.join('\n'))
   process.exitCode = 1
 } else {
-  console.log(`Public repository checks passed for ${trackedFiles.length} tracked files.`)
+  console.log(`Public repository checks passed for ${scannedFileCount} tracked files.`)
 }
 
 function isProjectSource(file) {
