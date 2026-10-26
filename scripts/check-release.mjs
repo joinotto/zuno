@@ -53,6 +53,21 @@ check(
   '.github/workflows/release.yml',
   'Release workflow must enable package provenance.',
 )
+check(
+  /^\s+id-token:\s+write\s*$/mu.test(releaseWorkflow),
+  '.github/workflows/release.yml',
+  'Release workflow must allow an OIDC identity token.',
+)
+check(
+  /^\s+environment:\s+npm\s*$/mu.test(releaseWorkflow),
+  '.github/workflows/release.yml',
+  'Release workflow must use the npm environment.',
+)
+check(
+  !/registry-url|NODE_AUTH_TOKEN|NPM_TOKEN/u.test(releaseWorkflow),
+  '.github/workflows/release.yml',
+  'Release workflow must not configure token-based npm authentication.',
+)
 
 if (failures.length > 0) {
   console.error('Release validation failed.')
