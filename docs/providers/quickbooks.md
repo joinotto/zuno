@@ -4,8 +4,8 @@
 
 The QuickBooks provider connects a Node.js application to QuickBooks Online.
 
-Use the main entry point for provider-native access. Use the compatibility entry point when an
-application needs the Ledger accounting model.
+The package root supplies provider-native access and the optional accounting compatibility client.
+The compatibility entry point remains available for existing consumers.
 
 ## Supported Environments
 

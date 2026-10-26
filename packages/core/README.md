@@ -2,7 +2,7 @@
 
 This package supplies shared runtime primitives for Zuno provider packages.
 
-The package contains no provider business models. The API is experimental.
+The package contains no provider business models. The stable `0.1` API follows Semantic Versioning.
 
 ## Install
 

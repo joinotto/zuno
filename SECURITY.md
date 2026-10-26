@@ -2,8 +2,13 @@
 
 ## Supported Versions
 
-Zuno has no supported public release. The maintainers will publish the support table with the first
-release.
+| Package line          | Supported |
+| --------------------- | --------- |
+| Latest stable `0.1.x` | Yes       |
+| Older stable `0.1.x`  | No        |
+| Prerelease versions   | No        |
+
+Upgrade to the latest stable patch before you report a defect.
 
 ## Report a Vulnerability
 

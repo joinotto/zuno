@@ -2,7 +2,7 @@
 
 This package supplies OAuth 2.0 primitives for Zuno provider packages.
 
-Applications own token persistence and encryption. The API is experimental.
+Applications own token persistence and encryption. The stable `0.1` API follows Semantic Versioning.
 
 ## Install
 
