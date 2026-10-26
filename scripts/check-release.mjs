@@ -90,7 +90,7 @@ function validateTarball(directory, label) {
   }
 
   const output = JSON.parse(result.stdout)
-  const pack = Array.isArray(output) ? output[0] : output
+  const pack = findPackageMetadata(output)
 
   if (pack === undefined) {
     failures.push(`${label}: npm pack returned no package metadata.`)
@@ -108,6 +108,28 @@ function validateTarball(directory, label) {
     [...files].every((file) => !file.startsWith('src/') && !file.startsWith('test/')),
     label,
     'Tarball must not contain source or test directories.',
+  )
+}
+
+function findPackageMetadata(output) {
+  if (Array.isArray(output)) {
+    return output.find(hasPackageFiles)
+  }
+
+  if (hasPackageFiles(output)) {
+    return output
+  }
+
+  if (typeof output === 'object' && output !== null) {
+    return Object.values(output).find(hasPackageFiles)
+  }
+
+  return undefined
+}
+
+function hasPackageFiles(value) {
+  return (
+    typeof value === 'object' && value !== null && 'files' in value && Array.isArray(value.files)
   )
 }
 
