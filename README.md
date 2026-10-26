@@ -160,7 +160,6 @@ Application
 - [Product scope](./docs/product-scope.md)
 - [Provider SDK design](./docs/provider-sdk-design.md)
 - [QuickBooks guide](./docs/providers/quickbooks.md)
-- [QuickBooks Ledger migration](./docs/providers/quickbooks-ledger-migration.md)
 - [Plaid plan](./docs/providers/plaid.md)
 - [HoneyBook discovery](./docs/providers/honeybook.md)
 - [Roadmap](./ROADMAP.md)
