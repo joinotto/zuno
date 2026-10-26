@@ -10,6 +10,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 const root = fileURLToPath(new URL('..', import.meta.url))
 const packageDirectories = await findPackageDirectories()
+const releaseWorkflow = await readFile(join(root, '.github/workflows/release.yml'), 'utf8')
 const failures = []
 const names = new Set()
 const requiredPackageFiles = [
@@ -33,11 +34,6 @@ for (const directory of packageDirectories) {
   check(packageData.type === 'module', label, 'Package type must be module.')
   check(packageData.private !== true, label, 'Public package must not be private.')
   check(packageData.publishConfig?.access === 'public', label, 'Package access must be public.')
-  check(
-    packageData.publishConfig?.provenance === true,
-    label,
-    'Package provenance must be enabled.',
-  )
   check(packageData.exports?.['.'] !== undefined, label, 'Package must export its main entry.')
 
   if (typeof packageData.name === 'string') {
@@ -46,6 +42,12 @@ for (const directory of packageDirectories) {
 
   validateTarball(directory, label)
 }
+
+check(
+  /^\s+NPM_CONFIG_PROVENANCE:\s+true\s*$/mu.test(releaseWorkflow),
+  '.github/workflows/release.yml',
+  'Release workflow must enable package provenance.',
+)
 
 if (failures.length > 0) {
   console.error('Release validation failed.')
