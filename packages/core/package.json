@@ -1,6 +1,6 @@
 {
   "name": "@ottoai/zuno",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0",
   "description": "Transport and runtime primitives for Zuno provider SDKs.",
   "type": "module",
   "license": "Apache-2.0",
