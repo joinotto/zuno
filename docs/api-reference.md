@@ -2,7 +2,7 @@
 
 ## Status
 
-This reference covers the experimental Phase 1 API. A minor prerelease can contain breaking changes.
+This reference covers the stable `0.1` API. Semantic Versioning controls public API changes.
 
 ## `@ottoai/zuno`
 
@@ -86,6 +86,25 @@ This reference covers the experimental Phase 1 API. A minor prerelease can conta
 
 ## `@ottoai/zuno-quickbooks`
 
-- `quickBooksManifest` describes QuickBooks environments and planned capabilities.
+- `QuickBooksOAuth` creates authorization URLs and exchanges, refreshes, or revokes tokens.
+- `QuickBooksClient` sends authenticated QuickBooks Online requests.
+- `QuickBooksClient.getCompanyInfo()` retrieves company information.
+- `QuickBooksClient.request()` sends a provider-native request.
+- `QuickBooksClient.companyPath()` creates a realm-scoped API path.
+- `QuickBooksClient.withMinorVersion()` adds the configured QuickBooks minor version.
+- `quickBooksManifest` describes implemented QuickBooks environments and capabilities.
 
-The QuickBooks client operations are not part of the Phase 1 API.
+## `@ottoai/zuno-quickbooks/compatibility`
+
+- `QuickBooksAccountingClient` supplies the Ledger accounting operations.
+- Account operations list and retrieve accounts.
+- Contact operations list, retrieve, create, and update customers or suppliers.
+- Category operations list and retrieve QuickBooks classes and departments.
+- Transaction operations list, retrieve, and identify deleted transactions.
+- Report operations return profit and loss, balance sheet, cash flow, and trial balance data.
+- Grouped report operations summarize supported reports by month, quarter, year, or total.
+- Mapping exports convert approved QuickBooks payloads into the compatibility model.
+- `collectDeletedTransactionIds()` extracts deleted transaction IDs from CDC responses.
+
+The compatibility entry point is optional. Provider-native applications can use the main entry point
+only.

@@ -107,7 +107,7 @@ The maintainers approved these decisions:
 2. Use the `@ottoai` npm scope.
 3. Publish only the clean Zuno repository history.
 4. Support Node.js 22.18.0 or later for the first release.
-5. Keep QuickBooks at the `experimental` support level until it meets the release criteria.
+5. Publish QuickBooks `0.1` with a stable API and the `community` support level.
 6. Send private security reports to `security@joinotto.com`.
 7. Use the `ottoai` npm organization for package ownership.
 

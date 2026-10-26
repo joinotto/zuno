@@ -7,12 +7,12 @@ one data model.
 
 ## Project Status
 
-The project is in active development. The current packages are experimental.
+The project is in active development. The QuickBooks package has a stable public API.
 
 The project uses the Apache License 2.0. The clean public history contains project-owned work.
 
-The shared transport, OAuth, and testing packages are implemented. The QuickBooks package currently
-contains its provider boundary and capability manifest.
+The shared transport, OAuth, and testing packages are implemented. The QuickBooks package supplies
+OAuth, provider-native API access, and an optional accounting compatibility entry point.
 
 ## Available Packages
 
@@ -21,12 +21,12 @@ contains its provider boundary and capability manifest.
 - `@ottoai/zuno-quickbooks` supplies the QuickBooks Online client.
 - `@ottoai/zuno-testing` supplies fixtures and provider test tools.
 
-Install the current alpha packages:
+Install the stable packages:
 
 ```bash
-npm install @ottoai/zuno@alpha @ottoai/zuno-oauth@alpha
-npm install @ottoai/zuno-quickbooks@alpha
-npm install --save-dev @ottoai/zuno-testing@alpha
+npm install @ottoai/zuno @ottoai/zuno-oauth
+npm install @ottoai/zuno-quickbooks
+npm install --save-dev @ottoai/zuno-testing
 ```
 
 ## Planned Packages
@@ -54,16 +54,19 @@ npm install --save-dev @ottoai/zuno-testing@alpha
 - [License and provenance review](./docs/license-and-provenance.md)
 - [Provenance audit](./docs/provenance-audit-2026-10-25.md)
 - [Provider SDK design](./docs/provider-sdk-design.md)
+- [QuickBooks provider](./docs/providers/quickbooks.md)
+- [Ledger migration guide](./docs/providers/quickbooks-ledger-migration.md)
 - [Contribution guide](./CONTRIBUTING.md)
 - [Governance](./GOVERNANCE.md)
 - [Security policy](./SECURITY.md)
 - [Support policy](./SUPPORT.md)
 - [Maintainer setup](./docs/maintainer-setup.md)
 
-## First Delivery
+## QuickBooks Delivery
 
-The first delivery implements a provider-native QuickBooks client. Compatibility tests will compare
-the package with approved provider fixtures.
+The first delivery implements the provider-native QuickBooks client and the Ledger accounting
+compatibility entry point. Automated tests cover OAuth, retries, mappings, reports, and
+transactions.
 
 Plaid is the second provider. Plaid will test the category-neutral core design.
 

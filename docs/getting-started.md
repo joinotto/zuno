@@ -13,8 +13,7 @@ pnpm add @ottoai/zuno @ottoai/zuno-oauth
 pnpm add --save-dev @ottoai/zuno-testing
 ```
 
-The first public release will use a prerelease version. Do not use an experimental release without
-an application rollback plan.
+Use exact versions in production lockfiles. Test provider upgrades before deployment.
 
 ## Create a Provider Transport
 
@@ -75,6 +74,33 @@ const testTransport = createTransport({
 })
 ```
 
+## Connect to QuickBooks
+
+```ts
+import { QuickBooksClient, QuickBooksOAuth } from '@ottoai/zuno-quickbooks'
+import { QuickBooksAccountingClient } from '@ottoai/zuno-quickbooks/compatibility'
+
+const oauth = new QuickBooksOAuth({
+  clientId: process.env.QUICKBOOKS_CLIENT_ID!,
+  clientSecret: process.env.QUICKBOOKS_CLIENT_SECRET!,
+  redirectUri: process.env.QUICKBOOKS_REDIRECT_URI!,
+})
+
+const authorizationUrl = oauth.getAuthorizationUrl('verified-oauth-state')
+
+const provider = new QuickBooksClient({
+  environment: 'production',
+  getAccessToken: readOrRefreshAccessToken,
+  realmId: 'quickbooks-realm-id',
+})
+
+const accounting = new QuickBooksAccountingClient(provider)
+const accounts = await accounting.listAccounts()
+```
+
+The application must persist encrypted tokens and validate the OAuth state. The SDK does not own
+these controls.
+
 ## Next Step
 
-Read the API reference. Then read the provider package documentation.
+Read the API reference. Then read the QuickBooks provider guide.
