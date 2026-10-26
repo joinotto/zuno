@@ -14,6 +14,12 @@ This file records repository-wide changes. Each published package also has its o
 ### Changed
 
 - Updated support, security, contribution, and maintainer guidance for public stable packages.
+- Strengthened public-repository checks for private consumer references and operational account
+  data.
+
+### Removed
+
+- Removed consumer-specific QuickBooks migration documentation from the public repository.
 
 ## 0.1.1 - 2026-10-26
 

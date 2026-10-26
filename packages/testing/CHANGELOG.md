@@ -10,7 +10,7 @@
 ### Patch Changes
 
 - Publish the stable 0.1 SDK packages. Add the QuickBooks OAuth client, provider client, accounting
-  operations, Ledger compatibility mappings, and production migration documentation.
+  operations, accounting compatibility mappings, and provider documentation.
 - d70c5db: Document the alpha installation channel and distinguish available packages from planned
   packages.
 - Updated dependencies

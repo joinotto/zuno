@@ -7,10 +7,9 @@ This document records the active maintainer and release controls.
 ## npm Organization
 
 1. The `ottoai` npm organization exists.
-2. The authenticated npm account is `toolsotto`.
-3. The `toolsotto` account is an organization owner.
-4. The organization requires two-factor authentication.
-5. The initial stable packages use version `0.1.0` or later.
+2. The organization requires two-factor authentication.
+3. Each maintainer uses an individual npm account.
+4. The stable packages use version `0.1.0` or later.
 
 The initial packages are:
 
@@ -62,7 +61,7 @@ publication.
 
 ## Package Ownership
 
-The initial core maintainer is `geekfarmer`. The initial npm bootstrap publisher is `toolsotto`.
+The initial core maintainer is `geekfarmer`.
 
 Add a second maintainer before a provider package reaches the `official` support level.
 

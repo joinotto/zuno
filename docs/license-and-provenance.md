@@ -4,7 +4,8 @@
 
 The project uses the Apache License 2.0. The public `main` branch contains a clean project history.
 
-The npm scope setup is not complete. Do not publish packages before the release controls are active.
+The project publishes packages through npm trusted publishing. The protected release workflow
+creates provenance for each package.
 
 ## Review Scope
 
