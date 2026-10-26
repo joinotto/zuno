@@ -10,16 +10,18 @@ export const quickBooksManifest = defineProviderManifest({
   },
   capabilities: {
     accounts: ['list', 'get'],
+    categories: ['list', 'get'],
     company: ['get'],
-    reports: ['profitAndLoss', 'balanceSheet', 'cashFlow', 'trialBalance'],
+    contacts: ['list', 'get', 'create', 'update'],
+    oauth: ['authorize', 'exchange', 'refresh', 'revoke'],
+    reports: ['profitAndLoss', 'balanceSheet', 'cashFlow', 'trialBalance', 'group'],
     transactions: ['list', 'get', 'deleted'],
-    webhooks: ['verify', 'parse'],
   },
   category: 'accounting',
   displayName: 'QuickBooks Online',
   environments: ['sandbox', 'production'],
   id: 'quickbooks',
-  support: 'experimental',
+  support: 'community',
 } as const)
 
 export type QuickBooksManifest = typeof quickBooksManifest
