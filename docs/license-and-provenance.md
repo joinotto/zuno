@@ -64,3 +64,14 @@ Public release requires all these approvals:
 3. CI passes the license checks.
 4. CI passes the package-content check.
 5. The npm organization accepts the package ownership.
+
+## Approved Runtime Dependencies
+
+### `jose`
+
+- Purpose: Verify Plaid ES256 webhook signatures.
+- Source: npm package `jose`.
+- License: MIT.
+- Imported code: None.
+- Local modifications: None.
+- Distribution: Runtime dependency of `@ottoai/zuno-plaid`.

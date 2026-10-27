@@ -23,7 +23,8 @@ Zuno is an open-source TypeScript project for provider-native integrations. Each
 keeps the provider's names, fields, identifiers, and behavior. Zuno does not force unrelated
 providers into one universal business model.
 
-QuickBooks Online is the first stable provider. Plaid is next. HoneyBook is in discovery.
+QuickBooks Online is the first stable provider. Plaid development is active. HoneyBook is in
+discovery.
 
 ## Why Zuno
 
@@ -69,7 +70,7 @@ refresh token.
 | Provider          | Package                   | Status       | Support      |
 | ----------------- | ------------------------- | ------------ | ------------ |
 | QuickBooks Online | `@ottoai/zuno-quickbooks` | Stable `0.1` | Community    |
-| Plaid             | `@ottoai/zuno-plaid`      | Planned next | Not released |
+| Plaid             | `@ottoai/zuno-plaid`      | Alpha `0.1`  | Community    |
 | HoneyBook         | `@ottoai/zuno-honeybook`  | Discovery    | Not released |
 
 The status describes the Zuno package. It does not describe provider uptime or provider API access.
@@ -111,6 +112,18 @@ QuickBooks Online operations:
 - profit and loss, balance sheet, cash flow, and trial balance reports
 - grouped reports
 - optional accounting compatibility mappings
+
+### `@ottoai/zuno-plaid`
+
+Plaid banking operations:
+
+- Link token creation and retrieval
+- public token exchange and Item operations
+- accounts and balances
+- Transactions Sync with pagination restart
+- identity and liabilities
+- institution retrieval and search
+- signed webhook verification
 
 ### `@ottoai/zuno-testing`
 

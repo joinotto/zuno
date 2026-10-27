@@ -106,6 +106,36 @@ const accounts = await accounting.listAccounts()
 The application must persist encrypted tokens and validate the OAuth state. The SDK does not own
 these controls.
 
+## Connect to Plaid
+
+Install the alpha provider:
+
+```bash
+pnpm add @ottoai/zuno-plaid@next
+```
+
+Create a server-side client:
+
+```ts
+import { PlaidClient } from '@ottoai/zuno-plaid'
+
+const plaid = new PlaidClient({
+  clientId: process.env.PLAID_CLIENT_ID!,
+  environment: 'sandbox',
+  secret: process.env.PLAID_SECRET!,
+})
+
+const link = await plaid.createLinkToken({
+  client_name: 'Example application',
+  country_codes: ['US'],
+  language: 'en',
+  products: ['transactions'],
+  user: { client_user_id: 'application-user-id' },
+})
+```
+
+The application owns token encryption, Item storage, cursor storage, and webhook processing.
+
 ## Next Step
 
-Read the API reference. Then read the QuickBooks provider guide.
+Read the API reference. Then read the guide for the selected provider.
