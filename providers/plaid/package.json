@@ -1,0 +1,52 @@
+{
+  "name": "@ottoai/zuno-plaid",
+  "version": "0.1.0-alpha.0",
+  "description": "Provider-native Plaid API client for Zuno.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joinotto/zuno",
+    "directory": "providers/plaid"
+  },
+  "homepage": "https://github.com/joinotto/zuno/tree/main/providers/plaid#readme",
+  "bugs": {
+    "url": "https://github.com/joinotto/zuno/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "next"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --sourcemap --clean",
+    "package:check": "publint && attw --pack . --profile esm-only",
+    "prepack": "pnpm build && node ../../scripts/prepare-package.mjs",
+    "typecheck:test": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@ottoai/zuno": "workspace:*",
+    "jose": "^6.1.0"
+  },
+  "devDependencies": {
+    "@ottoai/zuno-testing": "workspace:*"
+  }
+}

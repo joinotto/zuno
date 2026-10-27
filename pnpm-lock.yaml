@@ -65,6 +65,19 @@ importers:
         specifier: workspace:*
         version: link:../oauth
 
+  providers/plaid:
+    dependencies:
+      '@ottoai/zuno':
+        specifier: workspace:*
+        version: link:../../packages/core
+      jose:
+        specifier: ^6.1.0
+        version: 6.2.13
+    devDependencies:
+      '@ottoai/zuno-testing':
+        specifier: workspace:*
+        version: link:../../packages/testing
+
   providers/quickbooks:
     dependencies:
       '@ottoai/zuno':
@@ -1118,6 +1131,9 @@ packages:
 
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
+
+  jose@6.2.13:
+    resolution: {integrity: sha512-7TIg10ZE1x82YediN+lcrPNvGMKge9yFHQD+Qho/b8y2adfugU3AsvvHfxV0fzyFllT6l9xCjf4RWY9g/Z9PJQ==}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -2612,6 +2628,8 @@ snapshots:
   isexe@2.0.0: {}
 
   jju@1.4.0: {}
+
+  jose@6.2.13: {}
 
   joycon@3.1.1: {}
 
