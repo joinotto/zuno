@@ -1,5 +1,11 @@
 # @ottoai/zuno
 
+## 0.1.1
+
+### Patch Changes
+
+- 5654553: Publish the current stable package documentation on npm.
+
 ## 0.1.0
 
 ### Minor Changes
