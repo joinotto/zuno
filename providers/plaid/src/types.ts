@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { RetryPolicy, TransportHooks } from '@ottoai/zuno'
+import type {
+  PlaidTransactionCounterparty,
+  PlaidTransactionLocation,
+  PlaidTransactionPaymentMeta,
+} from './types/transactions.js'
 
 export type PlaidEnvironment = 'development' | 'production' | 'sandbox'
 export type PlaidRecord = Record<string, unknown>
@@ -206,18 +211,29 @@ export interface PlaidPersonalFinanceCategory extends PlaidRecord {
 
 export interface PlaidTransaction extends PlaidRecord {
   account_id: string
+  account_owner?: string | null
   amount: number
   authorized_date?: string | null
   authorized_datetime?: string | null
+  category?: string[] | null
+  category_id?: string | null
+  check_number?: string | null
+  counterparties?: PlaidTransactionCounterparty[]
   date: string
   datetime?: string | null
+  location?: PlaidTransactionLocation
+  logo_url?: string | null
   iso_currency_code: string | null
   merchant_name: string | null
   name: string
+  original_description?: string | null
+  payment_meta?: PlaidTransactionPaymentMeta
   payment_channel: string
+  personal_finance_category_icon_url?: string | null
   pending: boolean
   pending_transaction_id: string | null
   personal_finance_category?: PlaidPersonalFinanceCategory | null
+  website?: string | null
   transaction_id: string
   unofficial_currency_code: string | null
 }
