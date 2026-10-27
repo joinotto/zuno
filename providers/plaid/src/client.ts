@@ -140,7 +140,8 @@ export class PlaidClient {
       }
 
       try {
-        do {
+        let hasMore = true
+        while (hasMore) {
           const page = await this.syncTransactions({
             ...request,
             ...(cursor === undefined ? {} : { cursor }),
@@ -155,11 +156,9 @@ export class PlaidClient {
             result.transactions_update_status = page.transactions_update_status
           }
           cursor = page.next_cursor
-
-          if (!page.has_more) {
-            return result
-          }
-        } while (true)
+          hasMore = page.has_more
+        }
+        return result
       } catch (error) {
         if (
           restart < maxRestarts &&

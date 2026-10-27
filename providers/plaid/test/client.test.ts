@@ -4,6 +4,60 @@ import { describe, expect, it } from 'vitest'
 import { PlaidApiError, PlaidClient } from '../src/index.js'
 
 describe('PlaidClient', () => {
+  it('routes provider operations to their native Plaid endpoints', async () => {
+    const paths: string[] = []
+    const client = new PlaidClient({
+      clientId: 'client-id',
+      environment: 'development',
+      fetch: async (input) => {
+        paths.push(new URL(input instanceof Request ? input.url : input).pathname)
+        return Response.json({ request_id: 'request-1' })
+      },
+      secret: 'secret',
+    })
+
+    await client.getLinkToken({ link_token: 'link-token' })
+    await client.exchangePublicToken({ public_token: 'public-token' })
+    await client.getItem({ access_token: 'access-token' })
+    await client.removeItem({ access_token: 'access-token' })
+    await client.updateItemWebhook({
+      access_token: 'access-token',
+      webhook: 'https://example.com/webhooks/plaid',
+    })
+    await client.invalidateAccessToken({ access_token: 'access-token' })
+    await client.getAccounts({ access_token: 'access-token' })
+    await client.getBalances({ access_token: 'access-token' })
+    await client.refreshTransactions({ access_token: 'access-token' })
+    await client.getIdentity({ access_token: 'access-token' })
+    await client.getLiabilities({ access_token: 'access-token' })
+    await client.getInstitutionById({
+      country_codes: ['US'],
+      institution_id: 'ins_1',
+    })
+    await client.searchInstitutions({
+      country_codes: ['US'],
+      query: 'Zuno Bank',
+    })
+    await client.getWebhookVerificationKey({ key_id: 'key-1' })
+
+    expect(paths).toEqual([
+      '/link/token/get',
+      '/item/public_token/exchange',
+      '/item/get',
+      '/item/remove',
+      '/item/webhook/update',
+      '/item/access_token/invalidate',
+      '/accounts/get',
+      '/accounts/balance/get',
+      '/transactions/refresh',
+      '/identity/get',
+      '/liabilities/get',
+      '/institutions/get_by_id',
+      '/institutions/search',
+      '/webhook_verification_key/get',
+    ])
+  })
+
   it('uses Plaid headers and the selected environment', async () => {
     const requests: Request[] = []
     const client = new PlaidClient({
@@ -71,12 +125,15 @@ describe('PlaidClient', () => {
   })
 
   it('collects every Transactions Sync page', async () => {
-    const cursors: Array<string | undefined> = []
+    const cursors: (string | undefined)[] = []
     const client = new PlaidClient({
       clientId: 'client-id',
       environment: 'sandbox',
       fetch: async (_input, init) => {
-        const body = JSON.parse(String(init?.body)) as { cursor?: string }
+        if (typeof init?.body !== 'string') {
+          throw new TypeError('Expected a JSON request body.')
+        }
+        const body = JSON.parse(init.body) as { cursor?: string }
         cursors.push(body.cursor)
         return body.cursor === undefined
           ? Response.json({
