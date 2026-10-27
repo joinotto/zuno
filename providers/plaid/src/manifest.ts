@@ -26,6 +26,7 @@ export const plaidManifest = defineProviderManifest({
     items: ['exchange', 'get', 'remove', 'rotateToken', 'updateWebhook'],
     liabilities: ['get'],
     link: ['createToken', 'getToken'],
+    processors: ['createToken', 'createStripeBankAccountToken', 'setTokenPermissions'],
     statements: ['list', 'download', 'refresh'],
     transactions: ['get', 'sync', 'refresh', 'recurring'],
     webhooks: ['getVerificationKey', 'verify'],

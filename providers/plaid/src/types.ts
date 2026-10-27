@@ -346,10 +346,3 @@ export interface PlaidWebhookVerificationKey extends PlaidRecord {
 export interface WebhookVerificationKeyGetResponse extends PlaidResponse {
   key: PlaidWebhookVerificationKey
 }
-
-export interface PlaidWebhook extends PlaidRecord {
-  environment?: PlaidEnvironment
-  item_id?: string
-  webhook_code: string
-  webhook_type: string
-}

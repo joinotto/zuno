@@ -37,6 +37,13 @@ import type {
   StatementsRefreshRequest,
 } from './types/statements.js'
 import type {
+  ProcessorStripeBankAccountTokenCreateRequest,
+  ProcessorStripeBankAccountTokenCreateResponse,
+  ProcessorTokenCreateRequest,
+  ProcessorTokenCreateResponse,
+  ProcessorTokenPermissionsSetRequest,
+} from './types/processors.js'
+import type {
   TransactionsGetAllResult,
   TransactionsGetRequest,
   TransactionsGetResponse,
@@ -71,7 +78,6 @@ import type {
   PlaidClientOptions,
   PlaidEnvironment,
   PlaidRecord,
-  PlaidWebhook,
   TransactionsRefreshRequest,
   TransactionsSyncRequest,
   TransactionsSyncResponse,
@@ -79,6 +85,7 @@ import type {
   WebhookVerificationKeyGetRequest,
   WebhookVerificationKeyGetResponse,
 } from './types.js'
+import type { PlaidWebhook } from './types/webhooks.js'
 
 const baseUrls: Record<PlaidEnvironment, string> = {
   development: 'https://development.plaid.com',
@@ -334,6 +341,32 @@ export class PlaidClient {
 
   enrichTransactions(request: TransactionsEnrichRequest): Promise<TransactionsEnrichResponse> {
     return this.request('/transactions/enrich', request, 'transactions.enrich')
+  }
+
+  createProcessorToken(
+    request: ProcessorTokenCreateRequest,
+  ): Promise<ProcessorTokenCreateResponse> {
+    return this.request('/processor/token/create', request, 'processors.createToken')
+  }
+
+  createStripeBankAccountToken(
+    request: ProcessorStripeBankAccountTokenCreateRequest,
+  ): Promise<ProcessorStripeBankAccountTokenCreateResponse> {
+    return this.request(
+      '/processor/stripe/bank_account_token/create',
+      request,
+      'processors.createStripeBankAccountToken',
+    )
+  }
+
+  setProcessorTokenPermissions(
+    request: ProcessorTokenPermissionsSetRequest,
+  ): Promise<{ request_id: string }> {
+    return this.request(
+      '/processor/token/permissions/set',
+      request,
+      'processors.setTokenPermissions',
+    )
   }
 
   listStatements(request: StatementsListRequest): Promise<StatementsListResponse> {

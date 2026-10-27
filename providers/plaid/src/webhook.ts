@@ -3,11 +3,35 @@
 import { createHash, timingSafeEqual } from 'node:crypto'
 import { decodeProtectedHeader, importJWK, jwtVerify } from 'jose'
 import { PlaidWebhookVerificationError } from './errors.js'
+import type { PlaidWebhookVerificationKey, WebhookVerificationKeyGetResponse } from './types.js'
 import type {
+  PlaidAssetsWebhook,
+  PlaidInvestmentsWebhook,
+  PlaidItemWebhook,
+  PlaidKnownWebhook,
+  PlaidStatementsWebhook,
+  PlaidTransactionsWebhook,
   PlaidWebhook,
-  PlaidWebhookVerificationKey,
-  WebhookVerificationKeyGetResponse,
-} from './types.js'
+} from './types/webhooks.js'
+
+const assetsWebhookCodes = new Set(['ERROR', 'PRODUCT_READY'])
+const investmentsWebhookCodes = new Set(['DEFAULT_UPDATE', 'HOLDINGS_UPDATE'])
+const itemWebhookCodes = new Set([
+  'ERROR',
+  'NEW_ACCOUNTS_AVAILABLE',
+  'PENDING_EXPIRATION',
+  'USER_PERMISSION_REVOKED',
+  'WEBHOOK_UPDATE_ACKNOWLEDGED',
+])
+const statementsWebhookCodes = new Set(['STATEMENTS_REFRESH_COMPLETE'])
+const transactionsWebhookCodes = new Set([
+  'DEFAULT_UPDATE',
+  'HISTORICAL_UPDATE',
+  'INITIAL_UPDATE',
+  'RECURRING_TRANSACTIONS_UPDATE',
+  'SYNC_UPDATES_AVAILABLE',
+  'TRANSACTIONS_REMOVED',
+])
 
 export interface VerifyPlaidWebhookOptions {
   getVerificationKey: (
@@ -82,6 +106,45 @@ function parsePlaidWebhook(body: string): PlaidWebhook {
     throw new PlaidWebhookVerificationError('The Plaid webhook body is invalid.')
   }
   return payload as PlaidWebhook
+}
+
+export function isKnownPlaidWebhook(webhook: PlaidWebhook): webhook is PlaidKnownWebhook {
+  return (
+    isPlaidAssetsWebhook(webhook) ||
+    isPlaidInvestmentsWebhook(webhook) ||
+    isPlaidItemWebhook(webhook) ||
+    isPlaidStatementsWebhook(webhook) ||
+    isPlaidTransactionsWebhook(webhook)
+  )
+}
+
+export function isPlaidAssetsWebhook(webhook: PlaidWebhook): webhook is PlaidAssetsWebhook {
+  return webhook.webhook_type === 'ASSETS' && assetsWebhookCodes.has(webhook.webhook_code)
+}
+
+export function isPlaidInvestmentsWebhook(
+  webhook: PlaidWebhook,
+): webhook is PlaidInvestmentsWebhook {
+  return (
+    webhook.webhook_type === 'INVESTMENTS_TRANSACTIONS' &&
+    investmentsWebhookCodes.has(webhook.webhook_code)
+  )
+}
+
+export function isPlaidItemWebhook(webhook: PlaidWebhook): webhook is PlaidItemWebhook {
+  return webhook.webhook_type === 'ITEM' && itemWebhookCodes.has(webhook.webhook_code)
+}
+
+export function isPlaidStatementsWebhook(webhook: PlaidWebhook): webhook is PlaidStatementsWebhook {
+  return webhook.webhook_type === 'STATEMENTS' && statementsWebhookCodes.has(webhook.webhook_code)
+}
+
+export function isPlaidTransactionsWebhook(
+  webhook: PlaidWebhook,
+): webhook is PlaidTransactionsWebhook {
+  return (
+    webhook.webhook_type === 'TRANSACTIONS' && transactionsWebhookCodes.has(webhook.webhook_code)
+  )
 }
 
 function safeEqual(actual: string, expected: string): boolean {
