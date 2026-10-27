@@ -120,10 +120,15 @@ Plaid banking operations:
 - Link token creation and retrieval
 - public token exchange and Item operations
 - accounts and balances
-- Transactions Sync with pagination restart
+- Auth account-number retrieval
+- Transactions Get, Sync, recurring streams, refresh, and enrichment
+- statements and verified PDF downloads
+- investment holdings, transactions, and refresh
+- Asset Report creation, retrieval, filtering, audit copies, and PDF downloads
+- processor token creation and permission updates
 - identity and liabilities
 - institution retrieval and search
-- signed webhook verification
+- signed webhook verification and typed event guards
 
 ### `@ottoai/zuno-testing`
 
@@ -152,8 +157,7 @@ Application
   ├─ owns tenants, tokens, databases, queues, and encryption
   ├─ @ottoai/zuno-quickbooks
   └─ @ottoai/zuno-plaid
-       ├─ @ottoai/zuno
-       └─ @ottoai/zuno-oauth
+       └─ @ottoai/zuno
 ```
 
 ## Project Rules

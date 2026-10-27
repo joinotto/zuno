@@ -19,9 +19,14 @@ packages outside accounting.
 - Item retrieval, removal, webhook update, and token rotation
 - institution retrieval and search
 - accounts and balances
-- Transactions Sync and refresh
+- Auth account-number retrieval
+- Transactions Get, Sync, refresh, recurring streams, and enrichment
+- statements and PDF downloads
+- investment holdings, transactions, and refresh
+- Asset Reports, filters, audit copies, and PDF downloads
+- processor tokens and permission updates
 - identity and liabilities
-- signed webhook verification and parsing
+- signed webhook verification, parsing, and typed event guards
 - Item errors and reauthorization
 
 ## Environment
@@ -61,6 +66,68 @@ The complete helper:
 
 Persist the final cursor after the application stores every change.
 
+## Statements
+
+Use `listStatements()` to list available statements. Use `refreshStatements()` to request another
+date range.
+
+Use `downloadStatement()` to receive statement bytes and response metadata. When Plaid supplies a
+content hash, use `verifyPlaidContentHash()` before storing the file.
+
+The provider does not parse statement PDFs. A consuming application must own document storage,
+retention, extraction, and bookkeeping workflows.
+
+## Transactions and Recurring Streams
+
+Use `getTransactions()` for one date-range page. Use `getAllTransactions()` to collect all pages.
+Use Transactions Sync for ongoing synchronization.
+
+Transaction types include provider fields for:
+
+- original descriptions
+- authorized and posted dates
+- counterparties
+- payment metadata
+- locations
+- pending-to-posted identifiers
+- personal finance categories
+
+Use `getRecurringTransactions()` to retrieve Plaid recurring inflow and outflow streams.
+
+Use `enrichTransactions()` only for transaction data that the application is authorized to send to
+Plaid.
+
+## Auth
+
+Use `getAuth()` to retrieve provider account and routing numbers.
+
+Account numbers are sensitive. Do not log them. Encrypt stored values and limit access to the
+smallest required application role.
+
+## Investments
+
+Use `getInvestmentHoldings()` for accounts, holdings, and securities.
+
+Use `getInvestmentTransactions()` for one page. Use `getAllInvestmentTransactions()` to collect all
+pages. Use `refreshInvestments()` when the application needs an on-demand refresh.
+
+## Asset Reports
+
+The client supports Asset Report creation, retrieval, refresh, filtering, removal, audit copies, and
+PDF downloads.
+
+Asset Reports can contain sensitive identity, account, balance, and transaction data. The consuming
+application must apply access control, encryption, retention, and deletion policies.
+
+## Processor Tokens
+
+Use `createProcessorToken()` for an approved Plaid processor. Use `setProcessorTokenPermissions()`
+to update permitted products.
+
+Use `createStripeBankAccountToken()` only for the Plaid and Stripe processor flow.
+
+The consuming application must control which tenants and accounts can create processor tokens.
+
 ## Item Update Mode
 
 `PlaidApiError.requiresUpdateMode` identifies common Item errors that require Link update mode.
@@ -83,6 +150,10 @@ The verifier:
 7. parses the verified webhook
 
 Applications must deduplicate deliveries and store processing status.
+
+Typed guards are available for supported Item, Transactions, Statements, Investments, and Assets
+events. Unknown events remain valid `PlaidWebhook` values so applications can log and inspect new
+Plaid event types safely.
 
 ## Error Model
 

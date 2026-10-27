@@ -83,22 +83,23 @@ Current alpha capabilities:
 2. Public token exchange.
 3. Item and institution operations.
 4. Account and balance retrieval.
-5. Transactions Sync and refresh.
-6. Identity and liability operations.
-7. Signed webhook verification.
-8. Item update-mode error detection.
-9. Synthetic unit tests.
+5. Auth account-number retrieval.
+6. Transactions Get, Sync, refresh, recurring streams, and enrichment.
+7. Statement listing, refresh, and PDF download.
+8. Investment holdings, transactions, and refresh.
+9. Asset Reports, PDF downloads, filters, and audit copies.
+10. Processor token creation and permission updates.
+11. Identity and liability operations.
+12. Signed webhook verification and typed event guards.
+13. Item update-mode error detection.
+14. Synthetic unit tests.
 
 Remaining stabilization work:
 
 1. Run Plaid Sandbox integration tests.
 2. Add sanitized Sandbox recordings.
-3. Add Auth operations.
-4. Add Investment operations.
-5. Add recurring transaction operations.
-6. Add processor-token operations.
-7. Add webhook event helpers.
-8. Publish the first alpha package.
+3. Validate enabled Plaid products and account coverage.
+4. Publish the first alpha package.
 
 Exit conditions:
 
