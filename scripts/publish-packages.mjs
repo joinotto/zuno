@@ -16,6 +16,7 @@ const packageDirectories = [
   'packages/oauth',
   'packages/testing',
   'providers/quickbooks',
+  'providers/plaid',
 ]
 
 for (const relativeDirectory of packageDirectories) {

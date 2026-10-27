@@ -16,7 +16,8 @@ The initial packages are:
 - `@ottoai/zuno`
 - `@ottoai/zuno-oauth`
 - `@ottoai/zuno-testing`
-- `@ottoai/zuno-quickbooks` Plaid is not published.
+- `@ottoai/zuno-quickbooks`
+- `@ottoai/zuno-plaid` after the first alpha release
 
 ## Trusted Publishing
 

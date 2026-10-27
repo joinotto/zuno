@@ -109,3 +109,22 @@ This reference covers the stable `0.1` API. Semantic Versioning controls public 
 - `collectDeletedTransactionIds()` extracts deleted transaction IDs from CDC responses.
 
 The accounting client is optional. Provider-native applications can use `QuickBooksClient` directly.
+
+## `@ottoai/zuno-plaid`
+
+- `PlaidClient` sends authenticated Plaid requests.
+- `PlaidClient.createLinkToken()` creates a Link token.
+- `PlaidClient.exchangePublicToken()` creates an Item access token.
+- `PlaidClient.getItem()` retrieves Item state.
+- `PlaidClient.getAccounts()` retrieves accounts.
+- `PlaidClient.getBalances()` retrieves current account balances.
+- `PlaidClient.syncTransactions()` retrieves one Transactions Sync page.
+- `PlaidClient.syncAllTransactions()` retrieves a complete cursor update.
+- `PlaidClient.refreshTransactions()` requests a transaction refresh.
+- `PlaidClient.getIdentity()` retrieves identity data.
+- `PlaidClient.getLiabilities()` retrieves liability data.
+- `PlaidClient.getInstitutionById()` retrieves one institution.
+- `PlaidClient.searchInstitutions()` searches institutions.
+- `PlaidClient.verifyWebhook()` verifies and parses a signed webhook.
+- `PlaidApiError` exposes Plaid error fields.
+- `plaidManifest` describes implemented Plaid capabilities.

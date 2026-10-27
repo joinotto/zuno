@@ -73,26 +73,32 @@ Current stabilization work:
 4. Add webhook verification.
 5. Publish a complete runnable OAuth example.
 
-## Planned Next: Plaid
+## Active: Plaid
 
 Package: `@ottoai/zuno-plaid`
 
-Purpose:
+Current alpha capabilities:
 
-Validate that the category-neutral core works for banking data and cursor-based synchronization.
-
-Planned capabilities:
-
-1. Link token creation.
+1. Link token creation and retrieval.
 2. Public token exchange.
 3. Item and institution operations.
 4. Account and balance retrieval.
-5. Transactions Sync.
+5. Transactions Sync and refresh.
 6. Identity and liability operations.
-7. Webhook verification.
-8. Item error and reauthorization handling.
-9. Sandbox fixtures and tests.
-10. Optional application adapters.
+7. Signed webhook verification.
+8. Item update-mode error detection.
+9. Synthetic unit tests.
+
+Remaining stabilization work:
+
+1. Run Plaid Sandbox integration tests.
+2. Add sanitized Sandbox recordings.
+3. Add Auth operations.
+4. Add Investment operations.
+5. Add recurring transaction operations.
+6. Add processor-token operations.
+7. Add webhook event helpers.
+8. Publish the first alpha package.
 
 Exit conditions:
 
@@ -177,6 +183,6 @@ Self-hosted applications must not require these services.
 
 1. Complete the QuickBooks stable-release observation period.
 2. Publish a QuickBooks OAuth example application.
-3. Create the Plaid provider design and capability manifest.
-4. Confirm Plaid sandbox credentials and test data.
+3. Validate the Plaid provider in Sandbox.
+4. Publish the first Plaid alpha package.
 5. Start the HoneyBook API-access assessment.
