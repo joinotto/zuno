@@ -1,5 +1,11 @@
 # @ottoai/zuno
 
+## 0.1.2
+
+### Patch Changes
+
+- 4dcf334: Publish the complete Zuno project guide on the npm package page.
+
 ## 0.1.1
 
 ### Patch Changes
