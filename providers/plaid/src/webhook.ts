@@ -95,10 +95,5 @@ function safeEqual(actual: string, expected: string): boolean {
 function isVerificationKeyResponse(
   value: PlaidWebhookVerificationKey | WebhookVerificationKeyGetResponse,
 ): value is WebhookVerificationKeyGetResponse {
-  return (
-    'key' in value &&
-    typeof value.key === 'object' &&
-    value.key !== null &&
-    'kid' in value.key
-  )
+  return 'key' in value && typeof value.key === 'object' && value.key !== null && 'kid' in value.key
 }

@@ -129,7 +129,7 @@ export interface PlaidItem extends PlaidRecord {
   institution_name?: string
   item_id: string
   products: PlaidProduct[]
-  update_type: 'background' | 'user_present_required' | string
+  update_type: 'background' | 'user_present_required' | (string & {})
   webhook: string
 }
 
