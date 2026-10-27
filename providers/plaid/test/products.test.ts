@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it } from 'vitest'
-import { PlaidClient, verifyPlaidContentHash } from '../src/index.js'
+import { PlaidApiError, PlaidClient, verifyPlaidContentHash } from '../src/index.js'
 
 describe('Plaid bookkeeping products', () => {
   it('routes each product operation to the native Plaid endpoint', async () => {
@@ -273,6 +273,89 @@ describe('Plaid bookkeeping products', () => {
       request_ids: ['request-1'],
       transactions: [],
     })
+  })
+
+  it('stops investment pagination when Plaid returns an empty page', async () => {
+    const client = new PlaidClient({
+      clientId: 'client-id',
+      environment: 'sandbox',
+      fetch: async () =>
+        Response.json({
+          accounts: [],
+          investment_transactions: [],
+          item: {
+            available_products: [],
+            billed_products: [],
+            error: null,
+            institution_id: null,
+            item_id: 'item-1',
+            products: [],
+            update_type: 'background',
+            webhook: '',
+          },
+          request_id: 'request-1',
+          securities: [],
+          total_investment_transactions: 5,
+        }),
+      secret: 'secret',
+    })
+
+    await expect(
+      client.getAllInvestmentTransactions({
+        access_token: 'access-token',
+        end_date: '2026-10-27',
+        start_date: '2026-01-01',
+      }),
+    ).resolves.toMatchObject({
+      investment_transactions: [],
+      request_ids: ['request-1'],
+    })
+  })
+
+  it('supports binary responses without optional Plaid headers', async () => {
+    const client = new PlaidClient({
+      clientId: 'client-id',
+      environment: 'sandbox',
+      fetch: async () => new Response(new Uint8Array([1, 2, 3])),
+      secret: 'secret',
+    })
+
+    await expect(
+      client.downloadAssetReportPdf({ asset_report_token: 'asset-report-token' }),
+    ).resolves.toEqual({
+      data: new Uint8Array([1, 2, 3]),
+    })
+
+    const data = new Uint8Array([104, 101, 108, 108, 111]).buffer
+    await expect(
+      verifyPlaidContentHash(
+        data,
+        '2CF24DBA5FB0A30E26E83B2AC5B9E29E1B161E5C1FA7425E73043362938B9824',
+      ),
+    ).resolves.toBe(true)
+  })
+
+  it('maps Plaid download errors into PlaidApiError', async () => {
+    const client = new PlaidClient({
+      clientId: 'client-id',
+      environment: 'sandbox',
+      fetch: async () =>
+        Response.json(
+          {
+            error_code: 'ASSET_REPORT_NOT_READY',
+            error_message: 'the report is not ready',
+            error_type: 'ASSET_REPORT_ERROR',
+            request_id: 'request-error',
+          },
+          { status: 400 },
+        ),
+      retry: { maxAttempts: 1 },
+      secret: 'secret',
+    })
+
+    await expect(
+      client.downloadAssetReportPdf({ asset_report_token: 'asset-report-token' }),
+    ).rejects.toBeInstanceOf(PlaidApiError)
   })
 })
 
