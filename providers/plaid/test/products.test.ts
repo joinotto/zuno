@@ -55,6 +55,19 @@ describe('Plaid bookkeeping products', () => {
         },
       ],
     })
+    await client.createProcessorToken({
+      access_token: 'access-token',
+      account_id: 'account-1',
+      processor: 'dwolla',
+    })
+    await client.createStripeBankAccountToken({
+      access_token: 'access-token',
+      account_id: 'account-1',
+    })
+    await client.setProcessorTokenPermissions({
+      processor_token: 'processor-token',
+      products: ['transactions'],
+    })
     await client.listStatements({ access_token: 'access-token' })
     await client.downloadStatement({
       access_token: 'access-token',
@@ -94,6 +107,9 @@ describe('Plaid bookkeeping products', () => {
       '/investments/transactions/get',
       '/investments/refresh',
       '/transactions/enrich',
+      '/processor/token/create',
+      '/processor/stripe/bank_account_token/create',
+      '/processor/token/permissions/set',
       '/statements/list',
       '/statements/download',
       '/statements/refresh',

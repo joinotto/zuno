@@ -3,7 +3,16 @@
 import { createHash, generateKeyPairSync } from 'node:crypto'
 import { exportJWK, importPKCS8, SignJWT } from 'jose'
 import { describe, expect, it } from 'vitest'
-import { PlaidWebhookVerificationError, verifyPlaidWebhook } from '../src/index.js'
+import {
+  isKnownPlaidWebhook,
+  isPlaidAssetsWebhook,
+  isPlaidInvestmentsWebhook,
+  isPlaidItemWebhook,
+  isPlaidStatementsWebhook,
+  isPlaidTransactionsWebhook,
+  PlaidWebhookVerificationError,
+  verifyPlaidWebhook,
+} from '../src/index.js'
 
 describe('verifyPlaidWebhook', () => {
   it('rejects a missing signature', async () => {
@@ -159,6 +168,27 @@ describe('verifyPlaidWebhook', () => {
         now,
       }),
     ).rejects.toThrow('does not contain a body hash')
+  })
+
+  it('narrows supported webhook product events', () => {
+    const transactions = {
+      item_id: 'item-1',
+      webhook_code: 'SYNC_UPDATES_AVAILABLE',
+      webhook_type: 'TRANSACTIONS',
+    }
+
+    expect(isKnownPlaidWebhook(transactions)).toBe(true)
+    expect(isPlaidTransactionsWebhook(transactions)).toBe(true)
+    expect(isPlaidAssetsWebhook(transactions)).toBe(false)
+    expect(isPlaidInvestmentsWebhook(transactions)).toBe(false)
+    expect(isPlaidItemWebhook(transactions)).toBe(false)
+    expect(isPlaidStatementsWebhook(transactions)).toBe(false)
+    expect(
+      isKnownPlaidWebhook({
+        webhook_code: 'UNKNOWN',
+        webhook_type: 'UNSUPPORTED_PRODUCT',
+      }),
+    ).toBe(false)
   })
 })
 
