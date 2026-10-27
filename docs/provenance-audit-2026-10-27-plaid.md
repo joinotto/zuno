@@ -9,6 +9,12 @@ This record covers the first `@ottoai/zuno-plaid` implementation.
 - Plaid API documentation
 - Plaid Link documentation
 - Plaid Transactions Sync documentation
+- Plaid Statements documentation
+- Plaid Auth documentation
+- Plaid Investments documentation
+- Plaid Enrich documentation
+- Plaid Assets documentation
+- Plaid processor token documentation
 - Plaid webhook verification documentation
 - `jose` package documentation
 

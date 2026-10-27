@@ -4,5 +4,6 @@
 
 ### Minor Changes
 
-- Add the first Plaid client with Link, Item, account, transaction, identity, liability,
-  institution, and webhook operations.
+- Add the first Plaid client with Link, Item, account, Auth, transaction, recurring transaction,
+  statement, investment, Asset Report, enrichment, processor, identity, liability, institution, and
+  webhook operations.

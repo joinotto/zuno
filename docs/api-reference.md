@@ -118,13 +118,38 @@ The accounting client is optional. Provider-native applications can use `QuickBo
 - `PlaidClient.getItem()` retrieves Item state.
 - `PlaidClient.getAccounts()` retrieves accounts.
 - `PlaidClient.getBalances()` retrieves current account balances.
+- `PlaidClient.getAuth()` retrieves account and routing numbers.
+- `PlaidClient.getTransactions()` retrieves one date-range transaction page.
+- `PlaidClient.getAllTransactions()` retrieves all date-range transaction pages.
 - `PlaidClient.syncTransactions()` retrieves one Transactions Sync page.
 - `PlaidClient.syncAllTransactions()` retrieves a complete cursor update.
 - `PlaidClient.refreshTransactions()` requests a transaction refresh.
+- `PlaidClient.getRecurringTransactions()` retrieves recurring inflow and outflow streams.
+- `PlaidClient.enrichTransactions()` enriches supplied transaction descriptions.
 - `PlaidClient.getIdentity()` retrieves identity data.
 - `PlaidClient.getLiabilities()` retrieves liability data.
+- `PlaidClient.getInvestmentHoldings()` retrieves holdings and securities.
+- `PlaidClient.getInvestmentTransactions()` retrieves one investment transaction page.
+- `PlaidClient.getAllInvestmentTransactions()` retrieves all investment transaction pages.
+- `PlaidClient.refreshInvestments()` requests an investment refresh.
+- `PlaidClient.listStatements()` lists available bank statements.
+- `PlaidClient.downloadStatement()` downloads a statement.
+- `PlaidClient.refreshStatements()` requests statement extraction.
+- `PlaidClient.createAssetReport()` creates an Asset Report.
+- `PlaidClient.getAssetReport()` retrieves Asset Report JSON.
+- `PlaidClient.downloadAssetReportPdf()` downloads an Asset Report PDF.
+- `PlaidClient.refreshAssetReport()` refreshes an Asset Report.
+- `PlaidClient.filterAssetReport()` excludes accounts from an Asset Report.
+- `PlaidClient.removeAssetReport()` removes an Asset Report.
+- `PlaidClient.createAssetReportAuditCopy()` creates an auditor copy.
+- `PlaidClient.removeAssetReportAuditCopy()` removes an auditor copy.
+- `PlaidClient.createProcessorToken()` creates a processor token.
+- `PlaidClient.createStripeBankAccountToken()` creates a Stripe bank account token.
+- `PlaidClient.setProcessorTokenPermissions()` updates processor token products.
 - `PlaidClient.getInstitutionById()` retrieves one institution.
 - `PlaidClient.searchInstitutions()` searches institutions.
 - `PlaidClient.verifyWebhook()` verifies and parses a signed webhook.
+- `verifyPlaidContentHash()` verifies a downloaded Plaid file.
+- Plaid webhook guards narrow supported event types and codes.
 - `PlaidApiError` exposes Plaid error fields.
 - `plaidManifest` describes implemented Plaid capabilities.
