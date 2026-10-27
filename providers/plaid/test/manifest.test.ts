@@ -12,6 +12,11 @@ describe('Plaid manifest', () => {
       id: 'plaid',
       support: 'community',
     })
+    expect(plaidManifest.capabilities.assets).toContain('downloadReportPdf')
+    expect(plaidManifest.capabilities.auth).toContain('get')
+    expect(plaidManifest.capabilities.enrich).toContain('transactions')
+    expect(plaidManifest.capabilities.investments).toContain('getHoldings')
+    expect(plaidManifest.capabilities.statements).toContain('download')
     expect(plaidManifest.capabilities.transactions).toContain('sync')
     expect(plaidManifest.capabilities.webhooks).toContain('verify')
   })
