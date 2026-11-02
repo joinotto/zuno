@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@ottoai/zuno": "workspace:*",
-    "jose": "^6.1.0"
+    "jose": "^6.2.14"
   },
   "devDependencies": {
     "@ottoai/zuno-testing": "workspace:*"
